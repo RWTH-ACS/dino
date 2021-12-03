@@ -17857,6 +17857,16 @@ W = angled&lt;p&gt;
 <text x="279.4" y="223.52" size="1.778" layer="91">200kHz = 2.2k + 360p</text>
 <text x="279.4" y="228.6" size="1.778" layer="91">220kHz = 2.2k + 330p</text>
 <text x="116.84" y="271.78" size="1.778" layer="91">100mA, 250V</text>
+<text x="203.2" y="238.76" size="5.08" layer="88">Pin 1 und pin 10 vertauscht!</text>
+<text x="459.74" y="299.72" size="5.08" layer="88">Part nr falsch</text>
+<text x="160.02" y="193.04" size="5.08" layer="88">Part nr falsch</text>
+<text x="350.52" y="104.14" size="5.08" layer="88">Part nr falsch</text>
+<text x="525.78" y="335.28" size="5.08" layer="88">Part nr falsch</text>
+<text x="266.7" y="175.26" size="5.08" layer="88">Part nr falsch</text>
+<text x="401.32" y="73.66" size="5.08" layer="88">I2C PULL UPs Fehlen</text>
+<text x="467.36" y="104.14" size="5.08" layer="88">I2C PULL UPs Fehlen</text>
+<text x="233.68" y="81.28" size="5.08" layer="88">DIR_2 nicht verbunden. -&gt; ID LED</text>
+<text x="447.04" y="231.14" size="5.08" layer="88">move Bypass to output</text>
 </plain>
 <instances>
 <instance part="POWER" gate="G$1" x="518.16" y="340.36" smashed="yes">
