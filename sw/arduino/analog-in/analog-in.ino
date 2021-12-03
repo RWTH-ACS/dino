@@ -1,19 +1,3 @@
-/* Copyright 2021 Manuel Pitz <manuel.pitz@eonerc.rwth-aachen.de>
-** Copyright 2021 Niklas Eiling <niklas.eiling@eonerc.rwth-aachen.de>
-** Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), 
-** to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
-** and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-** 
-** The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-**
-** THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-** FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
-** LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
-** IN THE SOFTWARE.
-**
- */
-
-
 #include <Wire.h>
 
 
@@ -23,7 +7,83 @@ int CONV = 12;
 uint16_t val = 0;
 float vol;
 
-void setup() {
+
+#define I2C_IO_ADDR (0x20) //Address of TCA9534 when A1=A2=A3=Low
+#define I2C_IO_CONFIG_VALUE (1<<(uint8_t)(I2C_I_PORT_SAT))
+enum i2c_io_registers {
+  I2C_IO_INPUT = 0x00,
+  I2C_IO_OUTPUT = 0x01,
+  I2C_IO_POLARITY = 0x02,
+  I2C_IO_CONFIG = 0x03,
+};
+
+enum i2c_io_ports {
+  I2C_O_PORT_CLK_DIR = 0,
+  I2C_O_PORT_DATA_DIR = 1,
+  I2C_O_PORT_NC = 2,
+  I2C_O_PORT_N_WE = 3,
+  I2C_O_PORT_INPUT_ZERO = 4,
+  I2C_I_PORT_SAT = 5,
+  I2C_O_PORT_GAIN_LSB = 6,
+  I2C_O_PORT_GAIN_MSB = 7,
+};
+
+static uint8_t i2c_io_port_val = 0x00;
+
+int i2c_io_set_register(enum i2c_io_registers reg_addr, uint8_t value)
+{
+  int err = 0;
+  Wire.beginTransmission(I2C_IO_ADDR);  
+  Wire.write((uint8_t)(reg_addr));              //Set register
+  Wire.write(value);                 //Set register value
+
+  if ((err = Wire.endTransmission()) != 0) {
+    Serial.print("i2c error: ");
+    Serial.println(err);
+  }
+  return err;
+}
+
+int i2c_io_read_register(enum i2c_io_registers reg_addr, uint8_t *value)
+{
+  int err = 0;
+  if (value == NULL) {
+    return 1;
+  }
+  
+  Wire.beginTransmission(I2C_IO_ADDR);
+  Wire.write((uint8_t)(reg_addr));              //Set register
+  if ((err = Wire.endTransmission()) != 0) {
+    Serial.print("i2c error: ");
+    Serial.println(err);
+    return err;
+  }
+  Wire.requestFrom(I2C_IO_ADDR, 1);              //request from register
+  if (!Wire.available()) {
+    Serial.print("i2c error.");
+    err = 1;
+  } else {
+    *value = Wire.read();                 //Set register value
+  }
+  return err;
+}
+
+void i2c_o_port_set(enum i2c_io_ports port, uint8_t value)
+{
+  if (value & 1) { //set value?
+    i2c_io_port_val |= (1 << (uint8_t)(port));
+  } else { //unset value?
+    i2c_io_port_val &= ~(1 << (uint8_t)(port));
+  }
+}
+
+int i2c_o_port_update(void)
+{
+  return i2c_io_set_register(I2C_IO_OUTPUT, i2c_io_port_val);
+}
+
+void setup()
+{
 
   pinMode(SDO, INPUT);
   pinMode(CLK, OUTPUT);
@@ -32,68 +92,42 @@ void setup() {
   Wire.begin(); // join i2c bus (address optional for master)
   Wire.setClock(100000);
 
-  digitalWrite(CONV, 0);
-  digitalWrite(CLK, 1);
-
-  /*//go to sleep
-  digitalWrite(CONV, 0);
-  delayMicroseconds(200);
-  digitalWrite(CONV, 1);
-  delayMicroseconds(200);
-  digitalWrite(CONV, 0);
-  delayMicroseconds(200);
-  digitalWrite(CONV, 1);
-  delayMicroseconds(200);
-  digitalWrite(CONV, 0);
-  delayMicroseconds(200);
-  digitalWrite(CONV, 1);
-  delayMicroseconds(200);
-  digitalWrite(CONV, 0);
-  delayMicroseconds(200);
-  digitalWrite(CONV, 1);
-  delayMicroseconds(200);
-  //got to sleep end
-  delayMicroseconds(500);
-
-  //wake up
-  digitalWrite(CLK, 0);
-  delayMicroseconds(200);
-  digitalWrite(CLK, 1);
-  delayMicroseconds(100);
-
-  //trigger conv
-  digitalWrite(CONV, 1);
-  delayMicroseconds(10);
-  digitalWrite(CONV, 0);
-  delayMicroseconds(10);
-
-  
-  for(int i=0;i<14;i++){
-    
-    digitalWrite(CLK, 0);
-    delayMicroseconds(1); 
-    digitalWrite(CLK, 10);
-    //out |= (digitalRead(SDO))<<(13-i);
-    delayMicroseconds(10); 
-  }*/
-
-}
-
-void loop() {
-
-
-  Serial.println("hello");
-  Wire.beginTransmission(0x20);
-  Wire.write(0x03);
-  Wire.write(0);
-  Wire.write(0x01);
-  Wire.write(0xFF);
-  int err = Wire.endTransmission();
-
-  if (err != 0) {
-    Serial.print("i2c error: ");
-    Serial.println(err);
+  if (i2c_io_set_register(I2C_IO_CONFIG, I2C_IO_CONFIG_VALUE) != 0) { //Set all ports as output
   }
+
+  i2c_o_port_set(I2C_O_PORT_N_WE, 1);        //Set gain to high for falling flank
+  i2c_o_port_set(I2C_O_PORT_GAIN_LSB, 0);
+  i2c_o_port_set(I2C_O_PORT_GAIN_MSB, 0);    //Set gain to 1
+
+  i2c_o_port_set(I2C_O_PORT_CLK_DIR, 0);    //Set gain to 1
+  i2c_o_port_set(I2C_O_PORT_DATA_DIR, 1);    //Set gain to 1
+
+  i2c_o_port_set(I2C_O_PORT_INPUT_ZERO, 1);  //Set analog in to 0V
+
+  if (i2c_o_port_update()) {
+    
+  }
+  i2c_o_port_set(I2C_O_PORT_N_WE, 0);        //Set gain to low for falling flank
+  if (i2c_o_port_update()) {
+    
+  }
+  
+  digitalWrite(CONV, 0);
+  digitalWrite(CLK, 1);
+}
+void loop()
+{
+  int err;
+  uint8_t i2c_i_read = 0x00;
+  
+  Serial.println("hello");
+
+  err = i2c_io_read_register(I2C_IO_INPUT, &i2c_i_read);
+  if (err != 0) {
+    
+  }
+  Serial.print("Saturation: ");
+  Serial.println((i2c_i_read >> I2C_I_PORT_SAT) & 1);
 
   //trigger conv
   digitalWrite(CONV, 1);
