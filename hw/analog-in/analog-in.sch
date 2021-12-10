@@ -17867,6 +17867,7 @@ W = angled&lt;p&gt;
 <text x="467.36" y="104.14" size="5.08" layer="88">I2C PULL UPs Fehlen</text>
 <text x="233.68" y="81.28" size="5.08" layer="88">DIR_2 nicht verbunden. -&gt; ID LED</text>
 <text x="447.04" y="231.14" size="5.08" layer="88">move Bypass to output</text>
+<text x="251.46" y="142.24" size="5.08" layer="88">INA und INB vertauscht</text>
 </plain>
 <instances>
 <instance part="POWER" gate="G$1" x="518.16" y="340.36" smashed="yes">
