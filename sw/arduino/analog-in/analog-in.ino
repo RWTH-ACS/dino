@@ -221,8 +221,8 @@ void loop()
     
   }
   Serial.print("Saturation: ");
-  Serial.print(i2c_i_read);Serial.print(", ");
-  Serial.println((i2c_i_read >> I2C_I_PORT_SAT) & 1);
+ // Serial.print(i2c_i_read);Serial.print(", ");
+  Serial.print((i2c_i_read >> I2C_I_PORT_SAT) & 1);
 
   for (int i=0; i < 8; i++) {
     if (adc_read_val(&adc_val) != 0) {
