@@ -836,6 +836,17 @@
 <smd name="7" x="1.55" y="0.25" dx="0.8" dy="0.3" layer="1" roundness="5" rot="R180"/>
 <smd name="8" x="1.55" y="0.75" dx="0.8" dy="0.3" layer="1" roundness="5" rot="R180"/>
 </package>
+<package name="TSR1">
+<wire x1="-5.85" y1="-3.75" x2="-5.85" y2="3.75" width="0.127" layer="21"/>
+<wire x1="-5.85" y1="3.75" x2="5.85" y2="3.75" width="0.127" layer="21"/>
+<wire x1="5.85" y1="3.75" x2="5.85" y2="-3.75" width="0.127" layer="21"/>
+<wire x1="5.85" y1="-3.75" x2="-5.85" y2="-3.75" width="0.127" layer="21"/>
+<pad name="P3" x="2.54" y="1.75" drill="0.6" shape="long" rot="R90"/>
+<pad name="P1" x="-2.54" y="1.75" drill="0.6" shape="long" rot="R90"/>
+<pad name="P2" x="0" y="1.75" drill="0.6" shape="long" rot="R90"/>
+<text x="-3.81" y="5.08" size="1.27" layer="21">&gt;VALUE</text>
+<text x="-3.81" y="-5.08" size="1.27" layer="21">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="5569262-1">
@@ -2745,6 +2756,17 @@
 <pin name="VCCA" x="-5.08" y="17.78" length="middle" rot="R270"/>
 <pin name="VCCB" x="10.16" y="17.78" length="middle" rot="R270"/>
 </symbol>
+<symbol name="TSR1">
+<wire x1="-10.16" y1="-10.16" x2="-10.16" y2="10.16" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="10.16" x2="10.16" y2="10.16" width="0.254" layer="94"/>
+<wire x1="10.16" y1="10.16" x2="10.16" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-10.16" x2="-10.16" y2="-10.16" width="0.254" layer="94"/>
+<text x="-7.62" y="5.08" size="1.27" layer="95">&gt;NAME</text>
+<text x="-7.62" y="-7.62" size="1.27" layer="96">&gt;VALUE</text>
+<pin name="VIN" x="-15.24" y="0" length="middle"/>
+<pin name="VOUT" x="15.24" y="0" length="middle" rot="R180"/>
+<pin name="GND+" x="0" y="-15.24" length="middle" rot="R90"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="5569262-1" prefix="J">
@@ -3363,6 +3385,23 @@
 <connect gate="G$1" pin="OE" pad="6"/>
 <connect gate="G$1" pin="VCCA" pad="3"/>
 <connect gate="G$1" pin="VCCB" pad="7"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TSR1">
+<gates>
+<gate name="G$1" symbol="TSR1" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TSR1">
+<connects>
+<connect gate="G$1" pin="GND+" pad="P2"/>
+<connect gate="G$1" pin="VIN" pad="P1"/>
+<connect gate="G$1" pin="VOUT" pad="P3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -11231,7 +11270,6 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="0V" device=""/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="0V" device=""/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="0V" device=""/>
-<part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
 <part name="+3V3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="P+3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="V+" device=""/>
@@ -11420,6 +11458,9 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <part name="GND66" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="0V" device=""/>
 <part name="U$4" library="parts" deviceset="TXS0102" device=""/>
 <part name="GND67" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="0V" device=""/>
+<part name="U$5" library="parts" deviceset="TSR1" device=""/>
+<part name="P+9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
+<part name="GND68" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="0V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -11443,14 +11484,14 @@ indicates card is attached</text>
 <text x="553.72" y="30.48" size="1.778" layer="97">CLK IO 3</text>
 <text x="553.72" y="-25.4" size="1.778" layer="97">DATA IO 3</text>
 <text x="-281.94" y="152.4" size="1.778" layer="97">EEPROM required to fulfill VITA Standard. Contains setting for V_ADJ</text>
-<text x="680.72" y="30.48" size="1.778" layer="97">CLK IO 6</text>
-<text x="680.72" y="-25.4" size="1.778" layer="97">DATA IO 6</text>
-<text x="810.26" y="30.48" size="1.778" layer="97">CLK IO 2</text>
-<text x="810.26" y="-25.4" size="1.778" layer="97">DATA IO 2</text>
-<text x="939.8" y="30.48" size="1.778" layer="97">CLK IO 5</text>
-<text x="939.8" y="-25.4" size="1.778" layer="97">DATA IO 5</text>
-<text x="1056.64" y="30.48" size="1.778" layer="97">CLK IO 1</text>
-<text x="1056.64" y="-25.4" size="1.778" layer="97">DATA IO 1</text>
+<text x="680.72" y="30.48" size="1.778" layer="97">CLK IO 2</text>
+<text x="680.72" y="-25.4" size="1.778" layer="97">DATA IO 2</text>
+<text x="810.26" y="30.48" size="1.778" layer="97">CLK IO 6</text>
+<text x="810.26" y="-25.4" size="1.778" layer="97">DATA IO 6</text>
+<text x="939.8" y="30.48" size="1.778" layer="97">CLK IO 1</text>
+<text x="939.8" y="-25.4" size="1.778" layer="97">DATA IO 1</text>
+<text x="1056.64" y="30.48" size="1.778" layer="97">CLK IO 5</text>
+<text x="1056.64" y="-25.4" size="1.778" layer="97">DATA IO 5</text>
 <text x="-279.4" y="104.14" size="1.27" layer="97">According to https://ohwr.org/project/ed/wikis/schematics-checklist#fmc-mezzanine-cards</text>
 </plain>
 <instances>
@@ -11493,9 +11534,6 @@ indicates card is attached</text>
 </instance>
 <instance part="GND3" gate="1" x="281.94" y="302.26" smashed="yes">
 <attribute name="VALUE" x="280.035" y="299.72" size="1.778" layer="96"/>
-</instance>
-<instance part="P+1" gate="1" x="274.32" y="297.18" smashed="yes">
-<attribute name="VALUE" x="271.78" y="292.1" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="P+2" gate="1" x="-93.98" y="322.58" smashed="yes">
 <attribute name="VALUE" x="-93.98" y="325.12" size="1.778" layer="96"/>
@@ -12163,6 +12201,16 @@ indicates card is attached</text>
 <instance part="GND67" gate="1" x="45.72" y="-71.12" smashed="yes">
 <attribute name="VALUE" x="43.815" y="-73.66" size="1.778" layer="96"/>
 </instance>
+<instance part="U$5" gate="G$1" x="-149.86" y="127" smashed="yes">
+<attribute name="NAME" x="-157.48" y="132.08" size="1.27" layer="95"/>
+<attribute name="VALUE" x="-157.48" y="119.38" size="1.27" layer="96"/>
+</instance>
+<instance part="P+9" gate="1" x="-172.72" y="132.08" smashed="yes">
+<attribute name="VALUE" x="-172.72" y="134.62" size="1.778" layer="96"/>
+</instance>
+<instance part="GND68" gate="1" x="-149.86" y="106.68" smashed="yes">
+<attribute name="VALUE" x="-151.765" y="104.14" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -12220,14 +12268,14 @@ indicates card is attached</text>
 <label x="292.1" y="274.32" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U16" gate="G$1" pin="B"/>
-<wire x1="1082.04" y1="-50.8" x2="1087.12" y2="-50.8" width="0.1524" layer="91"/>
-<pinref part="R50" gate="G$1" pin="2"/>
-<wire x1="1092.2" y1="-48.26" x2="1087.12" y2="-48.26" width="0.1524" layer="91"/>
-<wire x1="1087.12" y1="-48.26" x2="1087.12" y2="-50.8" width="0.1524" layer="91"/>
-<wire x1="1092.2" y1="-48.26" x2="1099.82" y2="-48.26" width="0.1524" layer="91"/>
-<junction x="1092.2" y="-48.26"/>
-<label x="1099.82" y="-48.26" size="1.778" layer="95" xref="yes"/>
+<pinref part="U14" gate="G$1" pin="B"/>
+<wire x1="965.2" y1="-50.8" x2="970.28" y2="-50.8" width="0.1524" layer="91"/>
+<pinref part="R46" gate="G$1" pin="2"/>
+<wire x1="975.36" y1="-48.26" x2="970.28" y2="-48.26" width="0.1524" layer="91"/>
+<wire x1="970.28" y1="-48.26" x2="970.28" y2="-50.8" width="0.1524" layer="91"/>
+<wire x1="975.36" y1="-48.26" x2="982.98" y2="-48.26" width="0.1524" layer="91"/>
+<junction x="975.36" y="-48.26"/>
+<label x="982.98" y="-48.26" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="RJ1_CLK_N" class="0">
@@ -12237,14 +12285,14 @@ indicates card is attached</text>
 <label x="292.1" y="271.78" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U15" gate="G$1" pin="B"/>
-<wire x1="1082.04" y1="5.08" x2="1087.12" y2="5.08" width="0.1524" layer="91"/>
-<pinref part="R48" gate="G$1" pin="2"/>
-<wire x1="1092.2" y1="7.62" x2="1087.12" y2="7.62" width="0.1524" layer="91"/>
-<wire x1="1087.12" y1="7.62" x2="1087.12" y2="5.08" width="0.1524" layer="91"/>
-<wire x1="1092.2" y1="7.62" x2="1099.82" y2="7.62" width="0.1524" layer="91"/>
-<junction x="1092.2" y="7.62"/>
-<label x="1099.82" y="7.62" size="1.778" layer="95" xref="yes"/>
+<pinref part="U13" gate="G$1" pin="B"/>
+<wire x1="965.2" y1="5.08" x2="970.28" y2="5.08" width="0.1524" layer="91"/>
+<pinref part="R44" gate="G$1" pin="2"/>
+<wire x1="975.36" y1="7.62" x2="970.28" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="970.28" y1="7.62" x2="970.28" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="975.36" y1="7.62" x2="982.98" y2="7.62" width="0.1524" layer="91"/>
+<junction x="975.36" y="7.62"/>
+<label x="982.98" y="7.62" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="RJ1_CLK_P" class="0">
@@ -12254,14 +12302,14 @@ indicates card is attached</text>
 <label x="292.1" y="269.24" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U15" gate="G$1" pin="A"/>
-<wire x1="1082.04" y1="0" x2="1087.12" y2="0" width="0.1524" layer="91"/>
-<pinref part="R48" gate="G$1" pin="1"/>
-<wire x1="1092.2" y1="-2.54" x2="1087.12" y2="-2.54" width="0.1524" layer="91"/>
-<wire x1="1087.12" y1="-2.54" x2="1087.12" y2="0" width="0.1524" layer="91"/>
-<wire x1="1092.2" y1="-2.54" x2="1099.82" y2="-2.54" width="0.1524" layer="91"/>
-<junction x="1092.2" y="-2.54"/>
-<label x="1099.82" y="-2.54" size="1.778" layer="95" xref="yes"/>
+<pinref part="U13" gate="G$1" pin="A"/>
+<wire x1="965.2" y1="0" x2="970.28" y2="0" width="0.1524" layer="91"/>
+<pinref part="R44" gate="G$1" pin="1"/>
+<wire x1="975.36" y1="-2.54" x2="970.28" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="970.28" y1="-2.54" x2="970.28" y2="0" width="0.1524" layer="91"/>
+<wire x1="975.36" y1="-2.54" x2="982.98" y2="-2.54" width="0.1524" layer="91"/>
+<junction x="975.36" y="-2.54"/>
+<label x="982.98" y="-2.54" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="0V" class="0">
@@ -13335,6 +13383,11 @@ indicates card is attached</text>
 <wire x1="45.72" y1="-63.5" x2="45.72" y2="-68.58" width="0.1524" layer="91"/>
 <pinref part="GND67" gate="1" pin="0V"/>
 </segment>
+<segment>
+<pinref part="GND68" gate="1" pin="0V"/>
+<pinref part="U$5" gate="G$1" pin="GND+"/>
+<wire x1="-149.86" y1="109.22" x2="-149.86" y2="111.76" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="RJ5_SDO" class="0">
 <segment>
@@ -13375,14 +13428,14 @@ indicates card is attached</text>
 <label x="246.38" y="281.94" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U14" gate="G$1" pin="A"/>
-<wire x1="965.2" y1="-55.88" x2="970.28" y2="-55.88" width="0.1524" layer="91"/>
-<pinref part="R46" gate="G$1" pin="1"/>
-<wire x1="975.36" y1="-58.42" x2="970.28" y2="-58.42" width="0.1524" layer="91"/>
-<wire x1="970.28" y1="-58.42" x2="970.28" y2="-55.88" width="0.1524" layer="91"/>
-<wire x1="975.36" y1="-58.42" x2="982.98" y2="-58.42" width="0.1524" layer="91"/>
-<junction x="975.36" y="-58.42"/>
-<label x="982.98" y="-58.42" size="1.778" layer="95" xref="yes"/>
+<pinref part="U16" gate="G$1" pin="A"/>
+<wire x1="1082.04" y1="-55.88" x2="1087.12" y2="-55.88" width="0.1524" layer="91"/>
+<pinref part="R50" gate="G$1" pin="1"/>
+<wire x1="1092.2" y1="-58.42" x2="1087.12" y2="-58.42" width="0.1524" layer="91"/>
+<wire x1="1087.12" y1="-58.42" x2="1087.12" y2="-55.88" width="0.1524" layer="91"/>
+<wire x1="1092.2" y1="-58.42" x2="1099.82" y2="-58.42" width="0.1524" layer="91"/>
+<junction x="1092.2" y="-58.42"/>
+<label x="1099.82" y="-58.42" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="RJ5_CONV" class="0">
@@ -13404,14 +13457,14 @@ indicates card is attached</text>
 <label x="246.38" y="274.32" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U14" gate="G$1" pin="B"/>
-<wire x1="965.2" y1="-50.8" x2="970.28" y2="-50.8" width="0.1524" layer="91"/>
-<pinref part="R46" gate="G$1" pin="2"/>
-<wire x1="975.36" y1="-48.26" x2="970.28" y2="-48.26" width="0.1524" layer="91"/>
-<wire x1="970.28" y1="-48.26" x2="970.28" y2="-50.8" width="0.1524" layer="91"/>
-<wire x1="975.36" y1="-48.26" x2="982.98" y2="-48.26" width="0.1524" layer="91"/>
-<junction x="975.36" y="-48.26"/>
-<label x="982.98" y="-48.26" size="1.778" layer="95" xref="yes"/>
+<pinref part="U16" gate="G$1" pin="B"/>
+<wire x1="1082.04" y1="-50.8" x2="1087.12" y2="-50.8" width="0.1524" layer="91"/>
+<pinref part="R50" gate="G$1" pin="2"/>
+<wire x1="1092.2" y1="-48.26" x2="1087.12" y2="-48.26" width="0.1524" layer="91"/>
+<wire x1="1087.12" y1="-48.26" x2="1087.12" y2="-50.8" width="0.1524" layer="91"/>
+<wire x1="1092.2" y1="-48.26" x2="1099.82" y2="-48.26" width="0.1524" layer="91"/>
+<junction x="1092.2" y="-48.26"/>
+<label x="1099.82" y="-48.26" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="RJ5_CLK_N" class="0">
@@ -13421,14 +13474,14 @@ indicates card is attached</text>
 <label x="246.38" y="271.78" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U13" gate="G$1" pin="B"/>
-<wire x1="965.2" y1="5.08" x2="970.28" y2="5.08" width="0.1524" layer="91"/>
-<pinref part="R44" gate="G$1" pin="2"/>
-<wire x1="975.36" y1="7.62" x2="970.28" y2="7.62" width="0.1524" layer="91"/>
-<wire x1="970.28" y1="7.62" x2="970.28" y2="5.08" width="0.1524" layer="91"/>
-<wire x1="975.36" y1="7.62" x2="982.98" y2="7.62" width="0.1524" layer="91"/>
-<junction x="975.36" y="7.62"/>
-<label x="982.98" y="7.62" size="1.778" layer="95" xref="yes"/>
+<pinref part="U15" gate="G$1" pin="B"/>
+<wire x1="1082.04" y1="5.08" x2="1087.12" y2="5.08" width="0.1524" layer="91"/>
+<pinref part="R48" gate="G$1" pin="2"/>
+<wire x1="1092.2" y1="7.62" x2="1087.12" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="1087.12" y1="7.62" x2="1087.12" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="1092.2" y1="7.62" x2="1099.82" y2="7.62" width="0.1524" layer="91"/>
+<junction x="1092.2" y="7.62"/>
+<label x="1099.82" y="7.62" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="RJ5_CLK_P" class="0">
@@ -13438,14 +13491,14 @@ indicates card is attached</text>
 <label x="246.38" y="269.24" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U13" gate="G$1" pin="A"/>
-<wire x1="965.2" y1="0" x2="970.28" y2="0" width="0.1524" layer="91"/>
-<pinref part="R44" gate="G$1" pin="1"/>
-<wire x1="975.36" y1="-2.54" x2="970.28" y2="-2.54" width="0.1524" layer="91"/>
-<wire x1="970.28" y1="-2.54" x2="970.28" y2="0" width="0.1524" layer="91"/>
-<wire x1="975.36" y1="-2.54" x2="982.98" y2="-2.54" width="0.1524" layer="91"/>
-<junction x="975.36" y="-2.54"/>
-<label x="982.98" y="-2.54" size="1.778" layer="95" xref="yes"/>
+<pinref part="U15" gate="G$1" pin="A"/>
+<wire x1="1082.04" y1="0" x2="1087.12" y2="0" width="0.1524" layer="91"/>
+<pinref part="R48" gate="G$1" pin="1"/>
+<wire x1="1092.2" y1="-2.54" x2="1087.12" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="1087.12" y1="-2.54" x2="1087.12" y2="0" width="0.1524" layer="91"/>
+<wire x1="1092.2" y1="-2.54" x2="1099.82" y2="-2.54" width="0.1524" layer="91"/>
+<junction x="1092.2" y="-2.54"/>
+<label x="1099.82" y="-2.54" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="RJ6_SDO" class="0">
@@ -13490,14 +13543,14 @@ indicates card is attached</text>
 <label x="246.38" y="256.54" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U10" gate="G$1" pin="A"/>
-<wire x1="706.12" y1="-55.88" x2="711.2" y2="-55.88" width="0.1524" layer="91"/>
-<pinref part="R38" gate="G$1" pin="1"/>
-<wire x1="716.28" y1="-58.42" x2="711.2" y2="-58.42" width="0.1524" layer="91"/>
-<wire x1="711.2" y1="-58.42" x2="711.2" y2="-55.88" width="0.1524" layer="91"/>
-<wire x1="716.28" y1="-58.42" x2="723.9" y2="-58.42" width="0.1524" layer="91"/>
-<junction x="716.28" y="-58.42"/>
-<label x="723.9" y="-58.42" size="1.778" layer="95" xref="yes"/>
+<pinref part="U12" gate="G$1" pin="A"/>
+<wire x1="835.66" y1="-55.88" x2="840.74" y2="-55.88" width="0.1524" layer="91"/>
+<pinref part="R42" gate="G$1" pin="1"/>
+<wire x1="845.82" y1="-58.42" x2="840.74" y2="-58.42" width="0.1524" layer="91"/>
+<wire x1="840.74" y1="-58.42" x2="840.74" y2="-55.88" width="0.1524" layer="91"/>
+<wire x1="845.82" y1="-58.42" x2="853.44" y2="-58.42" width="0.1524" layer="91"/>
+<junction x="845.82" y="-58.42"/>
+<label x="853.44" y="-58.42" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="RJ6_CONV" class="0">
@@ -13519,14 +13572,14 @@ indicates card is attached</text>
 <label x="246.38" y="248.92" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U10" gate="G$1" pin="B"/>
-<wire x1="706.12" y1="-50.8" x2="711.2" y2="-50.8" width="0.1524" layer="91"/>
-<pinref part="R38" gate="G$1" pin="2"/>
-<wire x1="716.28" y1="-48.26" x2="711.2" y2="-48.26" width="0.1524" layer="91"/>
-<wire x1="711.2" y1="-48.26" x2="711.2" y2="-50.8" width="0.1524" layer="91"/>
-<wire x1="716.28" y1="-48.26" x2="723.9" y2="-48.26" width="0.1524" layer="91"/>
-<junction x="716.28" y="-48.26"/>
-<label x="723.9" y="-48.26" size="1.778" layer="95" xref="yes"/>
+<pinref part="U12" gate="G$1" pin="B"/>
+<wire x1="835.66" y1="-50.8" x2="840.74" y2="-50.8" width="0.1524" layer="91"/>
+<pinref part="R42" gate="G$1" pin="2"/>
+<wire x1="845.82" y1="-48.26" x2="840.74" y2="-48.26" width="0.1524" layer="91"/>
+<wire x1="840.74" y1="-48.26" x2="840.74" y2="-50.8" width="0.1524" layer="91"/>
+<wire x1="845.82" y1="-48.26" x2="853.44" y2="-48.26" width="0.1524" layer="91"/>
+<junction x="845.82" y="-48.26"/>
+<label x="853.44" y="-48.26" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="RJ6_CLK_N" class="0">
@@ -13536,14 +13589,14 @@ indicates card is attached</text>
 <label x="246.38" y="246.38" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U9" gate="G$1" pin="B"/>
-<wire x1="706.12" y1="5.08" x2="711.2" y2="5.08" width="0.1524" layer="91"/>
-<pinref part="R36" gate="G$1" pin="2"/>
-<wire x1="716.28" y1="7.62" x2="711.2" y2="7.62" width="0.1524" layer="91"/>
-<wire x1="711.2" y1="7.62" x2="711.2" y2="5.08" width="0.1524" layer="91"/>
-<wire x1="716.28" y1="7.62" x2="723.9" y2="7.62" width="0.1524" layer="91"/>
-<junction x="716.28" y="7.62"/>
-<label x="723.9" y="7.62" size="1.778" layer="95" xref="yes"/>
+<pinref part="U11" gate="G$1" pin="B"/>
+<wire x1="835.66" y1="5.08" x2="840.74" y2="5.08" width="0.1524" layer="91"/>
+<pinref part="R40" gate="G$1" pin="2"/>
+<wire x1="845.82" y1="7.62" x2="840.74" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="840.74" y1="7.62" x2="840.74" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="845.82" y1="7.62" x2="853.44" y2="7.62" width="0.1524" layer="91"/>
+<junction x="845.82" y="7.62"/>
+<label x="853.44" y="7.62" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="RJ6_CLK_P" class="0">
@@ -13553,14 +13606,14 @@ indicates card is attached</text>
 <label x="246.38" y="243.84" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U9" gate="G$1" pin="A"/>
-<wire x1="706.12" y1="0" x2="711.2" y2="0" width="0.1524" layer="91"/>
-<pinref part="R36" gate="G$1" pin="1"/>
-<wire x1="716.28" y1="-2.54" x2="711.2" y2="-2.54" width="0.1524" layer="91"/>
-<wire x1="711.2" y1="-2.54" x2="711.2" y2="0" width="0.1524" layer="91"/>
-<wire x1="716.28" y1="-2.54" x2="723.9" y2="-2.54" width="0.1524" layer="91"/>
-<junction x="716.28" y="-2.54"/>
-<label x="723.9" y="-2.54" size="1.778" layer="95" xref="yes"/>
+<pinref part="U11" gate="G$1" pin="A"/>
+<wire x1="835.66" y1="0" x2="840.74" y2="0" width="0.1524" layer="91"/>
+<pinref part="R40" gate="G$1" pin="1"/>
+<wire x1="845.82" y1="-2.54" x2="840.74" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="840.74" y1="-2.54" x2="840.74" y2="0" width="0.1524" layer="91"/>
+<wire x1="845.82" y1="-2.54" x2="853.44" y2="-2.54" width="0.1524" layer="91"/>
+<junction x="845.82" y="-2.54"/>
+<label x="853.44" y="-2.54" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="RJ2_SDO" class="0">
@@ -13606,14 +13659,14 @@ indicates card is attached</text>
 <label x="292.1" y="256.54" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U12" gate="G$1" pin="A"/>
-<wire x1="835.66" y1="-55.88" x2="840.74" y2="-55.88" width="0.1524" layer="91"/>
-<pinref part="R42" gate="G$1" pin="1"/>
-<wire x1="845.82" y1="-58.42" x2="840.74" y2="-58.42" width="0.1524" layer="91"/>
-<wire x1="840.74" y1="-58.42" x2="840.74" y2="-55.88" width="0.1524" layer="91"/>
-<wire x1="845.82" y1="-58.42" x2="853.44" y2="-58.42" width="0.1524" layer="91"/>
-<junction x="845.82" y="-58.42"/>
-<label x="853.44" y="-58.42" size="1.778" layer="95" xref="yes"/>
+<pinref part="U10" gate="G$1" pin="A"/>
+<wire x1="706.12" y1="-55.88" x2="711.2" y2="-55.88" width="0.1524" layer="91"/>
+<pinref part="R38" gate="G$1" pin="1"/>
+<wire x1="716.28" y1="-58.42" x2="711.2" y2="-58.42" width="0.1524" layer="91"/>
+<wire x1="711.2" y1="-58.42" x2="711.2" y2="-55.88" width="0.1524" layer="91"/>
+<wire x1="716.28" y1="-58.42" x2="723.9" y2="-58.42" width="0.1524" layer="91"/>
+<junction x="716.28" y="-58.42"/>
+<label x="723.9" y="-58.42" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="RJ2_CONV" class="0">
@@ -13635,14 +13688,14 @@ indicates card is attached</text>
 <label x="292.1" y="248.92" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U12" gate="G$1" pin="B"/>
-<wire x1="835.66" y1="-50.8" x2="840.74" y2="-50.8" width="0.1524" layer="91"/>
-<pinref part="R42" gate="G$1" pin="2"/>
-<wire x1="845.82" y1="-48.26" x2="840.74" y2="-48.26" width="0.1524" layer="91"/>
-<wire x1="840.74" y1="-48.26" x2="840.74" y2="-50.8" width="0.1524" layer="91"/>
-<wire x1="845.82" y1="-48.26" x2="853.44" y2="-48.26" width="0.1524" layer="91"/>
-<junction x="845.82" y="-48.26"/>
-<label x="853.44" y="-48.26" size="1.778" layer="95" xref="yes"/>
+<pinref part="U10" gate="G$1" pin="B"/>
+<wire x1="706.12" y1="-50.8" x2="711.2" y2="-50.8" width="0.1524" layer="91"/>
+<pinref part="R38" gate="G$1" pin="2"/>
+<wire x1="716.28" y1="-48.26" x2="711.2" y2="-48.26" width="0.1524" layer="91"/>
+<wire x1="711.2" y1="-48.26" x2="711.2" y2="-50.8" width="0.1524" layer="91"/>
+<wire x1="716.28" y1="-48.26" x2="723.9" y2="-48.26" width="0.1524" layer="91"/>
+<junction x="716.28" y="-48.26"/>
+<label x="723.9" y="-48.26" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="RJ2_CLK_N" class="0">
@@ -13652,14 +13705,14 @@ indicates card is attached</text>
 <label x="292.1" y="246.38" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U11" gate="G$1" pin="B"/>
-<wire x1="835.66" y1="5.08" x2="840.74" y2="5.08" width="0.1524" layer="91"/>
-<pinref part="R40" gate="G$1" pin="2"/>
-<wire x1="845.82" y1="7.62" x2="840.74" y2="7.62" width="0.1524" layer="91"/>
-<wire x1="840.74" y1="7.62" x2="840.74" y2="5.08" width="0.1524" layer="91"/>
-<wire x1="845.82" y1="7.62" x2="853.44" y2="7.62" width="0.1524" layer="91"/>
-<junction x="845.82" y="7.62"/>
-<label x="853.44" y="7.62" size="1.778" layer="95" xref="yes"/>
+<pinref part="U9" gate="G$1" pin="B"/>
+<wire x1="706.12" y1="5.08" x2="711.2" y2="5.08" width="0.1524" layer="91"/>
+<pinref part="R36" gate="G$1" pin="2"/>
+<wire x1="716.28" y1="7.62" x2="711.2" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="711.2" y1="7.62" x2="711.2" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="716.28" y1="7.62" x2="723.9" y2="7.62" width="0.1524" layer="91"/>
+<junction x="716.28" y="7.62"/>
+<label x="723.9" y="7.62" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="RJ2_CLK_P" class="0">
@@ -13669,14 +13722,14 @@ indicates card is attached</text>
 <label x="292.1" y="243.84" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U11" gate="G$1" pin="A"/>
-<wire x1="835.66" y1="0" x2="840.74" y2="0" width="0.1524" layer="91"/>
-<pinref part="R40" gate="G$1" pin="1"/>
-<wire x1="845.82" y1="-2.54" x2="840.74" y2="-2.54" width="0.1524" layer="91"/>
-<wire x1="840.74" y1="-2.54" x2="840.74" y2="0" width="0.1524" layer="91"/>
-<wire x1="845.82" y1="-2.54" x2="853.44" y2="-2.54" width="0.1524" layer="91"/>
-<junction x="845.82" y="-2.54"/>
-<label x="853.44" y="-2.54" size="1.778" layer="95" xref="yes"/>
+<pinref part="U9" gate="G$1" pin="A"/>
+<wire x1="706.12" y1="0" x2="711.2" y2="0" width="0.1524" layer="91"/>
+<pinref part="R36" gate="G$1" pin="1"/>
+<wire x1="716.28" y1="-2.54" x2="711.2" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="711.2" y1="-2.54" x2="711.2" y2="0" width="0.1524" layer="91"/>
+<wire x1="716.28" y1="-2.54" x2="723.9" y2="-2.54" width="0.1524" layer="91"/>
+<junction x="716.28" y="-2.54"/>
+<label x="723.9" y="-2.54" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="RJ7_SDO" class="0">
@@ -14165,41 +14218,6 @@ indicates card is attached</text>
 </net>
 <net name="+12V" class="0">
 <segment>
-<pinref part="J1" gate="G$1" pin="1.4"/>
-<wire x1="294.64" y1="276.86" x2="274.32" y2="276.86" width="0.1524" layer="91"/>
-<wire x1="274.32" y1="276.86" x2="274.32" y2="294.64" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="4.4"/>
-<wire x1="294.64" y1="200.66" x2="274.32" y2="200.66" width="0.1524" layer="91"/>
-<wire x1="274.32" y1="200.66" x2="274.32" y2="226.06" width="0.1524" layer="91"/>
-<junction x="274.32" y="276.86"/>
-<pinref part="J1" gate="G$1" pin="2.4"/>
-<wire x1="274.32" y1="226.06" x2="274.32" y2="251.46" width="0.1524" layer="91"/>
-<wire x1="274.32" y1="251.46" x2="274.32" y2="276.86" width="0.1524" layer="91"/>
-<wire x1="294.64" y1="251.46" x2="274.32" y2="251.46" width="0.1524" layer="91"/>
-<junction x="274.32" y="251.46"/>
-<pinref part="J1" gate="G$1" pin="3.4"/>
-<wire x1="294.64" y1="226.06" x2="274.32" y2="226.06" width="0.1524" layer="91"/>
-<junction x="274.32" y="226.06"/>
-<wire x1="274.32" y1="294.64" x2="231.14" y2="294.64" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="8.4"/>
-<wire x1="231.14" y1="294.64" x2="231.14" y2="276.86" width="0.1524" layer="91"/>
-<wire x1="231.14" y1="276.86" x2="231.14" y2="251.46" width="0.1524" layer="91"/>
-<wire x1="231.14" y1="251.46" x2="231.14" y2="226.06" width="0.1524" layer="91"/>
-<wire x1="231.14" y1="226.06" x2="231.14" y2="200.66" width="0.1524" layer="91"/>
-<wire x1="231.14" y1="200.66" x2="248.92" y2="200.66" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="7.4"/>
-<wire x1="248.92" y1="226.06" x2="231.14" y2="226.06" width="0.1524" layer="91"/>
-<junction x="231.14" y="226.06"/>
-<pinref part="J1" gate="G$1" pin="6.4"/>
-<wire x1="248.92" y1="251.46" x2="231.14" y2="251.46" width="0.1524" layer="91"/>
-<junction x="231.14" y="251.46"/>
-<pinref part="J1" gate="G$1" pin="5.4"/>
-<wire x1="248.92" y1="276.86" x2="231.14" y2="276.86" width="0.1524" layer="91"/>
-<junction x="231.14" y="276.86"/>
-<pinref part="P+1" gate="1" pin="+12V"/>
-<junction x="274.32" y="294.64"/>
-</segment>
-<segment>
 <pinref part="J2" gate="C" pin="C35"/>
 <wire x1="-83.82" y1="279.4" x2="-93.98" y2="279.4" width="0.1524" layer="91"/>
 <pinref part="J2" gate="C" pin="C37"/>
@@ -14213,6 +14231,12 @@ indicates card is attached</text>
 <pinref part="C37" gate="G$1" pin="2"/>
 <pinref part="P+8" gate="1" pin="+12V"/>
 <wire x1="-5.08" y1="345.44" x2="-5.08" y2="342.9" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="VIN"/>
+<pinref part="P+9" gate="1" pin="+12V"/>
+<wire x1="-165.1" y1="127" x2="-172.72" y2="127" width="0.1524" layer="91"/>
+<wire x1="-172.72" y1="127" x2="-172.72" y2="129.54" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="V+" class="0">
@@ -14900,14 +14924,14 @@ indicates card is attached</text>
 <label x="292.1" y="281.94" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U16" gate="G$1" pin="A"/>
-<wire x1="1082.04" y1="-55.88" x2="1087.12" y2="-55.88" width="0.1524" layer="91"/>
-<pinref part="R50" gate="G$1" pin="1"/>
-<wire x1="1092.2" y1="-58.42" x2="1087.12" y2="-58.42" width="0.1524" layer="91"/>
-<wire x1="1087.12" y1="-58.42" x2="1087.12" y2="-55.88" width="0.1524" layer="91"/>
-<wire x1="1092.2" y1="-58.42" x2="1099.82" y2="-58.42" width="0.1524" layer="91"/>
-<junction x="1092.2" y="-58.42"/>
-<label x="1099.82" y="-58.42" size="1.778" layer="95" xref="yes"/>
+<pinref part="U14" gate="G$1" pin="A"/>
+<wire x1="965.2" y1="-55.88" x2="970.28" y2="-55.88" width="0.1524" layer="91"/>
+<pinref part="R46" gate="G$1" pin="1"/>
+<wire x1="975.36" y1="-58.42" x2="970.28" y2="-58.42" width="0.1524" layer="91"/>
+<wire x1="970.28" y1="-58.42" x2="970.28" y2="-55.88" width="0.1524" layer="91"/>
+<wire x1="975.36" y1="-58.42" x2="982.98" y2="-58.42" width="0.1524" layer="91"/>
+<junction x="975.36" y="-58.42"/>
+<label x="982.98" y="-58.42" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="1V8" class="0">
@@ -15296,6 +15320,45 @@ indicates card is attached</text>
 <pinref part="U$4" gate="G$1" pin="VCCB"/>
 <wire x1="55.88" y1="-27.94" x2="55.88" y2="-22.86" width="0.1524" layer="91"/>
 <label x="55.88" y="-22.86" size="1.778" layer="95" rot="R90" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="VOUT"/>
+<wire x1="-134.62" y1="127" x2="-132.08" y2="127" width="0.1524" layer="91"/>
+<label x="-132.08" y="127" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="1.4"/>
+<wire x1="294.64" y1="276.86" x2="274.32" y2="276.86" width="0.1524" layer="91"/>
+<wire x1="274.32" y1="276.86" x2="274.32" y2="294.64" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$1" pin="4.4"/>
+<wire x1="294.64" y1="200.66" x2="274.32" y2="200.66" width="0.1524" layer="91"/>
+<wire x1="274.32" y1="200.66" x2="274.32" y2="226.06" width="0.1524" layer="91"/>
+<junction x="274.32" y="276.86"/>
+<pinref part="J1" gate="G$1" pin="2.4"/>
+<wire x1="274.32" y1="226.06" x2="274.32" y2="251.46" width="0.1524" layer="91"/>
+<wire x1="274.32" y1="251.46" x2="274.32" y2="276.86" width="0.1524" layer="91"/>
+<wire x1="294.64" y1="251.46" x2="274.32" y2="251.46" width="0.1524" layer="91"/>
+<junction x="274.32" y="251.46"/>
+<pinref part="J1" gate="G$1" pin="3.4"/>
+<wire x1="294.64" y1="226.06" x2="274.32" y2="226.06" width="0.1524" layer="91"/>
+<junction x="274.32" y="226.06"/>
+<wire x1="274.32" y1="294.64" x2="231.14" y2="294.64" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$1" pin="8.4"/>
+<wire x1="231.14" y1="294.64" x2="231.14" y2="276.86" width="0.1524" layer="91"/>
+<wire x1="231.14" y1="276.86" x2="231.14" y2="251.46" width="0.1524" layer="91"/>
+<wire x1="231.14" y1="251.46" x2="231.14" y2="226.06" width="0.1524" layer="91"/>
+<wire x1="231.14" y1="226.06" x2="231.14" y2="200.66" width="0.1524" layer="91"/>
+<wire x1="231.14" y1="200.66" x2="248.92" y2="200.66" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$1" pin="7.4"/>
+<wire x1="248.92" y1="226.06" x2="231.14" y2="226.06" width="0.1524" layer="91"/>
+<junction x="231.14" y="226.06"/>
+<pinref part="J1" gate="G$1" pin="6.4"/>
+<wire x1="248.92" y1="251.46" x2="231.14" y2="251.46" width="0.1524" layer="91"/>
+<junction x="231.14" y="251.46"/>
+<pinref part="J1" gate="G$1" pin="5.4"/>
+<wire x1="248.92" y1="276.86" x2="231.14" y2="276.86" width="0.1524" layer="91"/>
+<junction x="231.14" y="276.86"/>
+<label x="274.32" y="294.64" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
 </net>
 <net name="LSIO1" class="0">
