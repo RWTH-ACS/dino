@@ -1,5 +1,7 @@
 #include <Wire.h>
 
+int LED_PIN = 13;
+int led_state = 1;
 
 int SDO = 10;
 int CLK = 11;
@@ -155,7 +157,7 @@ void adc_raw_to_float(float *result, uint16_t raw)
 
 void setup()
 {
-
+  pinMode(LED_PIN, OUTPUT);
   pinMode(SDO, INPUT);
   pinMode(CLK, OUTPUT);
   pinMode(CONV, OUTPUT);
@@ -202,7 +204,7 @@ void setup()
   adc_zero_offset = adc_sum / 256;
   Serial.print("zero offset: "); Serial.println((float)adc_zero_offset/4000., 5);
 
-  i2c_o_port_set(I2C_O_PORT_INPUT_ZERO, 1);  //Set analog in to 0V
+  i2c_o_port_set(I2C_O_PORT_INPUT_ZERO, 1);  //Set analog in to input
   if (i2c_o_port_update()) {
     
   }
@@ -215,15 +217,24 @@ void loop()
   uint16_t adc_val;
   uint32_t adc_sum = 0;
   float adc_float;
+  bool in_saturation = false;
+
+  digitalWrite(LED_PIN, ((led_state++)/5) & 1);
   
   err = i2c_io_read_register(I2C_IO_INPUT, &i2c_i_read);
   if (err != 0) {
     
   }
   Serial.print("Saturation: ");
- // Serial.print(i2c_i_read);Serial.print(", ");
-  Serial.print((i2c_i_read >> I2C_I_PORT_SAT) & 1);
-
+  if (((i2c_i_read >> I2C_I_PORT_SAT) & 1) == 0) {
+    in_saturation = true;
+    Serial.print("true");
+  } else {
+    in_saturation = false;
+    Serial.print("false");
+  }
+  Serial.print(", ");
+  
   for (int i=0; i < 8; i++) {
     if (adc_read_val(&adc_val) != 0) {
       Serial.println("error: adc_read_val");
@@ -238,7 +249,8 @@ void loop()
   Serial.print(" adc_in: ");
   Serial.print((float)(adc_val)/4000., 5);
   Serial.print("V; in: ");
-  Serial.print(adc_float,5);
+  //because of circuit error (AD8250 inputs swapped) the input voltage is inverted.
+  Serial.print(-1*adc_float,5);
   Serial.println("V");
 
   delay(100);  
