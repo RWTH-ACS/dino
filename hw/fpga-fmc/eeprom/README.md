@@ -59,6 +59,10 @@ We can read the content of the FMC_HPC1 eeprom using `i2cdump 15 0x50`.
 
 ## Program the EEPROM
 - use a cross-compiler to compile `fmceeprom_write.c` for the Petalinux arch or use the pre-compiled `fmceeprom_write`.
+```
+. /opt/petalinux/2021.1/environment-setup-cortexa72-cortexa53-xilinx-linux
+$CC -std=gnu99 -o fmceeprom_write fmceeprom_write.c
+```
 - run `./fmceeprom_wirte fmceeprom.bin` and validate that the read back is correct.
 
 ## Verify FRU Data
