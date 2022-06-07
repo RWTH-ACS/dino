@@ -1,10 +1,10 @@
 ----------------------------------------------------------------------------------
--- Company: ACS, RWTH Aachen University
--- Engineer: Niklas Eiling
+-- Company: 
+-- Engineer: 
 -- 
--- Create Date: 09/29/2020 10:14:00 AM
+-- Create Date: 06/07/2022 12:08:51 PM
 -- Design Name: 
--- Module Name: villassensorif_fast - Behavioral
+-- Module Name: dinoif_fast - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -21,7 +21,6 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -33,11 +32,7 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 -- Package IP IP-xact XML Standard
--- AXI Merger suchen/entwickeln
--- Sampling Rate soll anpassbar sein, Am besten per IP timer. Timer triggered state machine start.
--- GPS synchronized conversion (PLL)
--- Output villassensorif
-entity villassensorif_fast is
+entity dinoif_fast is
     Port ( aclk : in STD_LOGIC;
            resetn : in STD_LOGIC;
            clk_20mhz : in STD_LOGIC;
@@ -50,9 +45,9 @@ entity villassensorif_fast is
            M00_AXIS_tlast: out STD_LOGIC
            );
            
-end villassensorif_fast;
+end dinoif_fast;
 
-architecture Behavioral of villassensorif_fast is
+architecture Behavioral of dinoif_fast is
     attribute X_INTERFACE_PARAMETER : string;
     ATTRIBUTE X_INTERFACE_INFO : STRING;
     ATTRIBUTE X_INTERFACE_INFO of aclk: SIGNAL is "xilinx.com:signal:clock:1.0 clk CLK";
