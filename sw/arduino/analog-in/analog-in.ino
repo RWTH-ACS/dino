@@ -124,22 +124,55 @@ int adc_read_val(uint16_t *val)
 {
   if (val == NULL) return 1;
   *val = 0;
-   //trigger conv
-  digitalWrite(CONV, 1);
-  delayMicroseconds(100);
+
+  //########### Latch conv low into flip-flop
+  //trigger conv
   digitalWrite(CONV, 0);
-  delayMicroseconds(100);
 
+  // This delay depends on the max. latency difference between the conv and clock isolators
+  // conv propagation delay 22ns-58ns
+  // sck propagation delay 25ns-55ns
+  //delayMicroseconds(1);
 
-  for (int i=0;i<14;i++){
-    
-    digitalWrite(CLK, 0);
-    delayMicroseconds(100); 
+  digitalWrite(CLK, 1);
+  digitalWrite(CLK, 0);
+  //###########
+  
+
+  //########### Data receive
+  
+  // wait for edge on data line 
+  //while(digitalRead(SDO) != 1);
+  // wait for adc conversion time delay (=1.3us)
+  delayMicroseconds(1);
+
+  for (int i=0;i<14;i++) {
+    *val |= (digitalRead(SDO))<<(13-i);
     digitalWrite(CLK, 1);
+    digitalWrite(CLK, 0);
+  }
+  /*for (int i=0;i<14;i++) {
+    digitalWrite(CLK, 1);
+    delayMicroseconds(100); 
+    digitalWrite(CLK, 0);
     delayMicroseconds(100);
     *val |= (digitalRead(SDO))<<(13-i);
     delayMicroseconds(100);  
-  }
+  }*/
+  //###########
+  
+
+  //########### latch conv high into flip-flop
+  digitalWrite(CONV, 1);
+  
+  // This delay depends on the max. latency difference between the conv and clock isolators
+  // conv propagation delay 22ns-58ns
+  // sck propagation delay 25ns-55ns
+  //delayMicroseconds(1);
+  digitalWrite(CLK, 1);
+  digitalWrite(CLK, 0);
+  //########### 
+  
   return 0;
 }
 
