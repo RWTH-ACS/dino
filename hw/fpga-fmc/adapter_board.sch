@@ -19212,6 +19212,7 @@ indicates card is attached</text>
 <text x="1056.64" y="30.48" size="1.778" layer="97">CLK IO 5</text>
 <text x="1056.64" y="-25.4" size="1.778" layer="97">DATA IO 5</text>
 <text x="-279.4" y="104.14" size="1.27" layer="97">According to https://ohwr.org/project/ed/wikis/schematics-checklist#fmc-mezzanine-cards</text>
+<text x="-160.02" y="30.48" size="6.4516" layer="88">DO NOT CONNECT RJ8 TO HA PORTS!</text>
 </plain>
 <instances>
 <instance part="J1" gate="G$1" x="279.4" y="241.3" smashed="yes" rot="R270">
@@ -23807,22 +23808,12 @@ indicates card is attached</text>
 </net>
 <net name="FMC_HA01_CC_P" class="0">
 <segment>
-<pinref part="J2" gate="D" pin="E2"/>
-<wire x1="-40.64" y1="287.02" x2="-50.8" y2="287.02" width="0.1524" layer="91"/>
-<label x="-50.8" y="287.02" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="149.86" y1="7.62" x2="147.32" y2="7.62" width="0.1524" layer="91"/>
 <label x="147.32" y="7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="FMC_HA01_CC_N" class="0">
-<segment>
-<pinref part="J2" gate="D" pin="E3"/>
-<wire x1="-40.64" y1="284.48" x2="-50.8" y2="284.48" width="0.1524" layer="91"/>
-<label x="-50.8" y="284.48" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
 <segment>
 <wire x1="154.94" y1="2.54" x2="147.32" y2="2.54" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="DE"/>
@@ -23836,11 +23827,6 @@ indicates card is attached</text>
 </net>
 <net name="FMC_HA00_CC_P" class="0">
 <segment>
-<pinref part="J2" gate="E" pin="F4"/>
-<wire x1="2.54" y1="307.34" x2="-7.62" y2="307.34" width="0.1524" layer="91"/>
-<label x="-7.62" y="307.34" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
 <wire x1="154.94" y1="-53.34" x2="147.32" y2="-53.34" width="0.1524" layer="91"/>
 <pinref part="U2" gate="G$1" pin="DE"/>
 <wire x1="167.64" y1="-58.42" x2="154.94" y2="-58.42" width="0.1524" layer="91"/>
@@ -23852,11 +23838,6 @@ indicates card is attached</text>
 </segment>
 </net>
 <net name="FMC_HA00_CC_N" class="0">
-<segment>
-<pinref part="J2" gate="E" pin="F5"/>
-<wire x1="2.54" y1="304.8" x2="-7.62" y2="304.8" width="0.1524" layer="91"/>
-<label x="-7.62" y="304.8" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
 <segment>
 <pinref part="R23" gate="G$1" pin="2"/>
 <wire x1="149.86" y1="-48.26" x2="147.32" y2="-48.26" width="0.1524" layer="91"/>
@@ -23882,11 +23863,6 @@ indicates card is attached</text>
 </segment>
 </net>
 <net name="FMC_HA05_N" class="0">
-<segment>
-<pinref part="J2" gate="D" pin="E7"/>
-<wire x1="-40.64" y1="274.32" x2="-50.8" y2="274.32" width="0.1524" layer="91"/>
-<label x="-50.8" y="274.32" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
 <segment>
 <pinref part="U18" gate="G$1" pin="A1"/>
 <wire x1="-86.36" y1="20.32" x2="-116.84" y2="20.32" width="0.1524" layer="91"/>

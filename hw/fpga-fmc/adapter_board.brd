@@ -7339,32 +7339,24 @@ Your Eurocircuits Team
 <wire x1="25.2984" y1="31.1658" x2="25.2984" y2="31.8516" width="0.1524" layer="1"/>
 </signal>
 <signal name="FMC_HA01_CC_P">
-<contactref element="J2" pad="E2"/>
 <contactref element="R2" pad="2"/>
 <wire x1="3.8075" y1="26.289" x2="4.318" y2="26.289" width="0.1524" layer="1"/>
-<wire x1="4.318" y1="26.289" x2="57.995" y2="15.765" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="FMC_HA01_CC_N">
-<contactref element="J2" pad="E3"/>
 <contactref element="U1" pad="P2"/>
 <contactref element="U1" pad="P3"/>
 <wire x1="2.8575" y1="27.849" x2="3.3575" y2="27.849" width="0.1524" layer="1"/>
 <wire x1="2.8575" y1="27.849" x2="2.8575" y2="25.146" width="0.1524" layer="1"/>
-<wire x1="2.8575" y1="25.146" x2="56.725" y2="15.765" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="FMC_HA00_CC_P">
-<contactref element="J2" pad="F4"/>
 <contactref element="U2" pad="P2"/>
 <contactref element="U2" pad="P3"/>
 <wire x1="6.858" y1="27.849" x2="7.358" y2="27.849" width="0.1524" layer="1"/>
 <wire x1="6.858" y1="25.3365" x2="6.858" y2="27.849" width="0.1524" layer="1"/>
 <wire x1="7.4295" y1="24.765" x2="6.858" y2="25.3365" width="0.1524" layer="1"/>
-<wire x1="7.4295" y1="24.765" x2="55.455" y2="17.035" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="FMC_HA00_CC_N">
-<contactref element="J2" pad="F5"/>
 <contactref element="R23" pad="2"/>
-<wire x1="7.808" y1="26.289" x2="54.185" y2="17.035" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="N$2" class="3">
 <contactref element="12V_GOOD" pad="C"/>
@@ -7383,7 +7375,6 @@ Your Eurocircuits Team
 <wire x1="65.82" y1="54.256" x2="65.72" y2="54.356" width="0.6096" layer="1"/>
 </signal>
 <signal name="FMC_HA05_N">
-<contactref element="J2" pad="E7"/>
 <contactref element="U18" pad="5"/>
 <contactref element="R59" pad="1"/>
 <wire x1="17.0688" y1="23.4188" x2="17.0688" y2="35.8902" width="0.1524" layer="1"/>
@@ -7394,7 +7385,6 @@ Your Eurocircuits Team
 <wire x1="12.2881" y1="40.8656" x2="12.2881" y2="41.021" width="0.1524" layer="16"/>
 <via x="12.2881" y="41.021" extent="1-16" drill="0.35"/>
 <wire x1="12.2881" y1="41.021" x2="13.742" y2="41.021" width="0.1524" layer="1"/>
-<wire x1="17.0688" y1="23.4188" x2="51.645" y2="15.765" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="N$6">
 <contactref element="R60" pad="1"/>
