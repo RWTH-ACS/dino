@@ -19169,9 +19169,9 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="RJ1_FDD" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="RJ3_FCD" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="RJ3_FDD" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
-<part name="R57" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="0R"/>
+<part name="R57" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="0R DNP"/>
 <part name="R58" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="0R"/>
-<part name="R59" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="NB"/>
+<part name="R59" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="DNP"/>
 <part name="GND75" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="0V" device=""/>
 <part name="U40" library="parts" deviceset="IRLML2502" device=""/>
 <part name="R60" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10R"/>
@@ -19180,6 +19180,10 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="1V8_GOOD" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_0805" package3d_urn="urn:adsk.eagle:package:15821/2"/>
 <part name="GND77" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="0V" device=""/>
 <part name="+3V6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
+<part name="R63" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="0R"/>
+<part name="R64" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="0R"/>
+<part name="R65" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="0R DNP"/>
+<part name="R66" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="0R DNP"/>
 </parts>
 <sheets>
 <sheet>
@@ -19212,7 +19216,6 @@ indicates card is attached</text>
 <text x="1056.64" y="30.48" size="1.778" layer="97">CLK IO 5</text>
 <text x="1056.64" y="-25.4" size="1.778" layer="97">DATA IO 5</text>
 <text x="-279.4" y="104.14" size="1.27" layer="97">According to https://ohwr.org/project/ed/wikis/schematics-checklist#fmc-mezzanine-cards</text>
-<text x="-160.02" y="30.48" size="6.4516" layer="88">DO NOT CONNECT RJ8 TO HA PORTS!</text>
 </plain>
 <instances>
 <instance part="J1" gate="G$1" x="279.4" y="241.3" smashed="yes" rot="R270">
@@ -20193,6 +20196,22 @@ indicates card is attached</text>
 </instance>
 <instance part="+3V6" gate="G$1" x="30.48" y="416.56" smashed="yes">
 <attribute name="VALUE" x="25.4" y="419.1" size="1.778" layer="96"/>
+</instance>
+<instance part="R63" gate="G$1" x="-340.36" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="-341.8586" y="1.27" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-342.138" y="6.35" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R64" gate="G$1" x="-335.28" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="-336.7786" y="1.27" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-337.058" y="6.35" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R65" gate="G$1" x="-340.36" y="30.48" smashed="yes" rot="R90">
+<attribute name="NAME" x="-341.8586" y="26.67" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-342.138" y="31.75" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R66" gate="G$1" x="-335.28" y="30.48" smashed="yes" rot="R90">
+<attribute name="NAME" x="-336.7786" y="26.67" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-337.058" y="31.75" size="1.778" layer="96" rot="R90"/>
 </instance>
 </instances>
 <busses>
@@ -22384,27 +22403,12 @@ indicates card is attached</text>
 <wire x1="-129.54" y1="236.22" x2="-139.7" y2="236.22" width="0.1524" layer="91"/>
 <label x="-139.7" y="236.22" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
-<segment>
-<wire x1="284.48" y1="2.54" x2="276.86" y2="2.54" width="0.1524" layer="91"/>
-<pinref part="U3" gate="G$1" pin="DE"/>
-<wire x1="297.18" y1="-2.54" x2="284.48" y2="-2.54" width="0.1524" layer="91"/>
-<pinref part="U3" gate="G$1" pin="RE"/>
-<wire x1="297.18" y1="2.54" x2="284.48" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="284.48" y1="-2.54" x2="284.48" y2="2.54" width="0.1524" layer="91"/>
-<junction x="284.48" y="2.54"/>
-<label x="276.86" y="2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
 </net>
 <net name="FMC_DP0_C2M_N" class="0">
 <segment>
 <pinref part="J2" gate="B" pin="C3"/>
 <wire x1="-129.54" y1="233.68" x2="-139.7" y2="233.68" width="0.1524" layer="91"/>
 <label x="-139.7" y="233.68" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="R25" gate="G$1" pin="2"/>
-<wire x1="279.4" y1="7.62" x2="276.86" y2="7.62" width="0.1524" layer="91"/>
-<label x="276.86" y="7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="FMC_DP0_M2C_P" class="0">
@@ -22413,27 +22417,12 @@ indicates card is attached</text>
 <wire x1="-129.54" y1="226.06" x2="-139.7" y2="226.06" width="0.1524" layer="91"/>
 <label x="-139.7" y="226.06" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
-<segment>
-<wire x1="414.02" y1="2.54" x2="406.4" y2="2.54" width="0.1524" layer="91"/>
-<pinref part="U5" gate="G$1" pin="DE"/>
-<wire x1="426.72" y1="-2.54" x2="414.02" y2="-2.54" width="0.1524" layer="91"/>
-<pinref part="U5" gate="G$1" pin="RE"/>
-<wire x1="426.72" y1="2.54" x2="414.02" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="414.02" y1="-2.54" x2="414.02" y2="2.54" width="0.1524" layer="91"/>
-<junction x="414.02" y="2.54"/>
-<label x="406.4" y="2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
 </net>
 <net name="FMC_DP0_M2C_N" class="0">
 <segment>
 <pinref part="J2" gate="B" pin="C7"/>
 <wire x1="-129.54" y1="223.52" x2="-139.7" y2="223.52" width="0.1524" layer="91"/>
 <label x="-139.7" y="223.52" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="R29" gate="G$1" pin="2"/>
-<wire x1="408.94" y1="7.62" x2="406.4" y2="7.62" width="0.1524" layer="91"/>
-<label x="406.4" y="7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="FMC_LA06_P" class="0">
@@ -22443,16 +22432,9 @@ indicates card is attached</text>
 <label x="-139.7" y="215.9" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="530.86" y1="2.54" x2="523.24" y2="2.54" width="0.1524" layer="91"/>
-<pinref part="U7" gate="G$1" pin="DE"/>
-<wire x1="543.56" y1="-2.54" x2="530.86" y2="-2.54" width="0.1524" layer="91"/>
-<pinref part="U7" gate="G$1" pin="RE"/>
-<wire x1="543.56" y1="2.54" x2="530.86" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="530.86" y1="-2.54" x2="530.86" y2="2.54" width="0.1524" layer="91"/>
-<junction x="530.86" y="2.54"/>
-<label x="523.24" y="2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="RJ3_FCD" gate="G$1" pin="TP"/>
-<junction x="530.86" y="-2.54"/>
+<pinref part="R49" gate="G$1" pin="2"/>
+<wire x1="1028.7" y1="7.62" x2="1026.16" y2="7.62" width="0.1524" layer="91"/>
+<label x="1026.16" y="7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="FMC_LA06_N" class="0">
@@ -22462,11 +22444,14 @@ indicates card is attached</text>
 <label x="-139.7" y="213.36" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="R33" gate="G$1" pin="2"/>
-<wire x1="525.78" y1="7.62" x2="523.24" y2="7.62" width="0.1524" layer="91"/>
-<label x="523.24" y="7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="RJ3_FCL" gate="G$1" pin="TP"/>
-<junction x="525.78" y="7.62"/>
+<wire x1="1033.78" y1="2.54" x2="1026.16" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="U15" gate="G$1" pin="DE"/>
+<wire x1="1046.48" y1="-2.54" x2="1033.78" y2="-2.54" width="0.1524" layer="91"/>
+<pinref part="U15" gate="G$1" pin="RE"/>
+<wire x1="1046.48" y1="2.54" x2="1033.78" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="1033.78" y1="-2.54" x2="1033.78" y2="2.54" width="0.1524" layer="91"/>
+<junction x="1033.78" y="2.54"/>
+<label x="1026.16" y="2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="FMC_LA10_P" class="0">
@@ -22475,31 +22460,12 @@ indicates card is attached</text>
 <wire x1="-129.54" y1="205.74" x2="-139.7" y2="205.74" width="0.1524" layer="91"/>
 <label x="-139.7" y="205.74" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
-<segment>
-<wire x1="657.86" y1="2.54" x2="650.24" y2="2.54" width="0.1524" layer="91"/>
-<pinref part="U9" gate="G$1" pin="DE"/>
-<wire x1="670.56" y1="-2.54" x2="657.86" y2="-2.54" width="0.1524" layer="91"/>
-<pinref part="U9" gate="G$1" pin="RE"/>
-<wire x1="670.56" y1="2.54" x2="657.86" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="657.86" y1="-2.54" x2="657.86" y2="2.54" width="0.1524" layer="91"/>
-<junction x="657.86" y="2.54"/>
-<label x="650.24" y="2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="RJ2_FCD" gate="G$1" pin="TP"/>
-<junction x="657.86" y="-2.54"/>
-</segment>
 </net>
 <net name="FMC_LA10_N" class="0">
 <segment>
 <pinref part="J2" gate="B" pin="C15"/>
 <wire x1="-129.54" y1="203.2" x2="-139.7" y2="203.2" width="0.1524" layer="91"/>
 <label x="-139.7" y="203.2" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="R37" gate="G$1" pin="2"/>
-<wire x1="652.78" y1="7.62" x2="650.24" y2="7.62" width="0.1524" layer="91"/>
-<label x="650.24" y="7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="RJ2_FCL" gate="G$1" pin="TP"/>
-<junction x="652.78" y="7.62"/>
 </segment>
 </net>
 <net name="FMC_LA14_P" class="0">
@@ -22509,14 +22475,9 @@ indicates card is attached</text>
 <label x="-139.7" y="195.58" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="787.4" y1="2.54" x2="779.78" y2="2.54" width="0.1524" layer="91"/>
-<pinref part="U11" gate="G$1" pin="DE"/>
-<wire x1="800.1" y1="-2.54" x2="787.4" y2="-2.54" width="0.1524" layer="91"/>
-<pinref part="U11" gate="G$1" pin="RE"/>
-<wire x1="800.1" y1="2.54" x2="787.4" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="787.4" y1="-2.54" x2="787.4" y2="2.54" width="0.1524" layer="91"/>
-<junction x="787.4" y="2.54"/>
-<label x="779.78" y="2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="R66" gate="G$1" pin="2"/>
+<wire x1="-335.28" y1="35.56" x2="-335.28" y2="40.64" width="0.1524" layer="91"/>
+<label x="-335.28" y="40.64" size="1.27" layer="95" rot="R90" xref="yes"/>
 </segment>
 </net>
 <net name="FMC_LA14_N" class="0">
@@ -22526,9 +22487,9 @@ indicates card is attached</text>
 <label x="-139.7" y="193.04" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="R41" gate="G$1" pin="2"/>
-<wire x1="782.32" y1="7.62" x2="779.78" y2="7.62" width="0.1524" layer="91"/>
-<label x="779.78" y="7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="R65" gate="G$1" pin="2"/>
+<wire x1="-340.36" y1="35.56" x2="-340.36" y2="40.64" width="0.1524" layer="91"/>
+<label x="-340.36" y="40.64" size="1.27" layer="95" rot="R90" xref="yes"/>
 </segment>
 </net>
 <net name="FMC_IIC_SCL" class="0">
@@ -22547,16 +22508,9 @@ indicates card is attached</text>
 <junction x="-274.32" y="137.16"/>
 </segment>
 <segment>
-<pinref part="U17" gate="G$1" pin="SCL"/>
-<wire x1="-284.48" y1="15.24" x2="-294.64" y2="15.24" width="0.1524" layer="91"/>
-<pinref part="R6" gate="G$1" pin="1"/>
-<wire x1="-294.64" y1="15.24" x2="-307.34" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="-307.34" y1="15.24" x2="-320.04" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="-307.34" y1="22.86" x2="-307.34" y2="15.24" width="0.1524" layer="91"/>
-<junction x="-307.34" y="15.24"/>
-<label x="-320.04" y="15.24" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="M_SCL" gate="G$1" pin="TP"/>
-<junction x="-294.64" y="15.24"/>
+<pinref part="R64" gate="G$1" pin="1"/>
+<wire x1="-335.28" y1="0" x2="-335.28" y2="-5.08" width="0.1524" layer="91"/>
+<label x="-335.28" y="-5.08" size="1.27" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="FMC_IIC_SDA" class="0">
@@ -22575,16 +22529,9 @@ indicates card is attached</text>
 <junction x="-231.14" y="129.54"/>
 </segment>
 <segment>
-<pinref part="U17" gate="G$1" pin="SDA"/>
-<wire x1="-284.48" y1="20.32" x2="-297.18" y2="20.32" width="0.1524" layer="91"/>
-<pinref part="R5" gate="G$1" pin="1"/>
-<wire x1="-297.18" y1="20.32" x2="-312.42" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="-312.42" y1="20.32" x2="-320.04" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="-312.42" y1="22.86" x2="-312.42" y2="20.32" width="0.1524" layer="91"/>
-<junction x="-312.42" y="20.32"/>
-<label x="-320.04" y="20.32" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="M_SDA" gate="G$1" pin="TP"/>
-<junction x="-297.18" y="20.32"/>
+<pinref part="R63" gate="G$1" pin="1"/>
+<wire x1="-340.36" y1="0" x2="-340.36" y2="-5.08" width="0.1524" layer="91"/>
+<label x="-340.36" y="-5.08" size="1.27" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="FMC_GBTCLK0_M2C_P" class="0">
@@ -22608,16 +22555,14 @@ indicates card is attached</text>
 <label x="-96.52" y="246.38" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="530.86" y1="-53.34" x2="523.24" y2="-53.34" width="0.1524" layer="91"/>
-<pinref part="U8" gate="G$1" pin="DE"/>
-<wire x1="543.56" y1="-58.42" x2="530.86" y2="-58.42" width="0.1524" layer="91"/>
-<pinref part="U8" gate="G$1" pin="RE"/>
-<wire x1="543.56" y1="-53.34" x2="530.86" y2="-53.34" width="0.1524" layer="91"/>
-<wire x1="530.86" y1="-58.42" x2="530.86" y2="-53.34" width="0.1524" layer="91"/>
-<junction x="530.86" y="-53.34"/>
-<label x="523.24" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="RJ3_FDD" gate="G$1" pin="TP"/>
-<junction x="530.86" y="-58.42"/>
+<wire x1="1033.78" y1="-53.34" x2="1026.16" y2="-53.34" width="0.1524" layer="91"/>
+<pinref part="U16" gate="G$1" pin="DE"/>
+<wire x1="1046.48" y1="-58.42" x2="1033.78" y2="-58.42" width="0.1524" layer="91"/>
+<pinref part="U16" gate="G$1" pin="RE"/>
+<wire x1="1046.48" y1="-53.34" x2="1033.78" y2="-53.34" width="0.1524" layer="91"/>
+<wire x1="1033.78" y1="-58.42" x2="1033.78" y2="-53.34" width="0.1524" layer="91"/>
+<junction x="1033.78" y="-53.34"/>
+<label x="1026.16" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="FMC_LA01_CC_N" class="0">
@@ -22627,11 +22572,9 @@ indicates card is attached</text>
 <label x="-96.52" y="243.84" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="R35" gate="G$1" pin="2"/>
-<wire x1="525.78" y1="-48.26" x2="523.24" y2="-48.26" width="0.1524" layer="91"/>
-<label x="523.24" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="RJ3_FDA" gate="G$1" pin="TP"/>
-<junction x="525.78" y="-48.26"/>
+<pinref part="R51" gate="G$1" pin="2"/>
+<wire x1="1028.7" y1="-48.26" x2="1026.16" y2="-48.26" width="0.1524" layer="91"/>
+<label x="1026.16" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="FMC_LA05_P" class="0">
@@ -22640,12 +22583,31 @@ indicates card is attached</text>
 <wire x1="-83.82" y1="238.76" x2="-96.52" y2="238.76" width="0.1524" layer="91"/>
 <label x="-96.52" y="238.76" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="R47" gate="G$1" pin="2"/>
+<wire x1="911.86" y1="-48.26" x2="909.32" y2="-48.26" width="0.1524" layer="91"/>
+<label x="909.32" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="RJ1_FDA" gate="G$1" pin="TP"/>
+<junction x="911.86" y="-48.26"/>
+</segment>
 </net>
 <net name="FMC_LA05_N" class="0">
 <segment>
 <pinref part="J2" gate="C" pin="D12"/>
 <wire x1="-83.82" y1="236.22" x2="-96.52" y2="236.22" width="0.1524" layer="91"/>
 <label x="-96.52" y="236.22" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="916.94" y1="-53.34" x2="909.32" y2="-53.34" width="0.1524" layer="91"/>
+<pinref part="U14" gate="G$1" pin="DE"/>
+<wire x1="929.64" y1="-58.42" x2="916.94" y2="-58.42" width="0.1524" layer="91"/>
+<pinref part="U14" gate="G$1" pin="RE"/>
+<wire x1="929.64" y1="-53.34" x2="916.94" y2="-53.34" width="0.1524" layer="91"/>
+<wire x1="916.94" y1="-58.42" x2="916.94" y2="-53.34" width="0.1524" layer="91"/>
+<junction x="916.94" y="-53.34"/>
+<label x="909.32" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="RJ1_FDD" gate="G$1" pin="TP"/>
+<junction x="916.94" y="-58.42"/>
 </segment>
 </net>
 <net name="FMC_LA09_P" class="0">
@@ -22654,31 +22616,12 @@ indicates card is attached</text>
 <wire x1="-83.82" y1="231.14" x2="-96.52" y2="231.14" width="0.1524" layer="91"/>
 <label x="-96.52" y="231.14" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
-<segment>
-<wire x1="657.86" y1="-53.34" x2="650.24" y2="-53.34" width="0.1524" layer="91"/>
-<pinref part="U10" gate="G$1" pin="DE"/>
-<wire x1="670.56" y1="-58.42" x2="657.86" y2="-58.42" width="0.1524" layer="91"/>
-<pinref part="U10" gate="G$1" pin="RE"/>
-<wire x1="670.56" y1="-53.34" x2="657.86" y2="-53.34" width="0.1524" layer="91"/>
-<wire x1="657.86" y1="-58.42" x2="657.86" y2="-53.34" width="0.1524" layer="91"/>
-<junction x="657.86" y="-53.34"/>
-<label x="650.24" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="RJ2_FDD" gate="G$1" pin="TP"/>
-<junction x="657.86" y="-58.42"/>
-</segment>
 </net>
 <net name="FMC_LA09_N" class="0">
 <segment>
 <pinref part="J2" gate="C" pin="D15"/>
 <wire x1="-83.82" y1="228.6" x2="-96.52" y2="228.6" width="0.1524" layer="91"/>
 <label x="-96.52" y="228.6" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="R39" gate="G$1" pin="2"/>
-<wire x1="652.78" y1="-48.26" x2="650.24" y2="-48.26" width="0.1524" layer="91"/>
-<label x="650.24" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="RJ2_FDA" gate="G$1" pin="TP"/>
-<junction x="652.78" y="-48.26"/>
 </segment>
 </net>
 <net name="FMC_LA13_P" class="0">
@@ -22687,27 +22630,12 @@ indicates card is attached</text>
 <wire x1="-83.82" y1="223.52" x2="-96.52" y2="223.52" width="0.1524" layer="91"/>
 <label x="-96.52" y="223.52" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
-<segment>
-<wire x1="787.4" y1="-53.34" x2="779.78" y2="-53.34" width="0.1524" layer="91"/>
-<pinref part="U12" gate="G$1" pin="DE"/>
-<wire x1="800.1" y1="-58.42" x2="787.4" y2="-58.42" width="0.1524" layer="91"/>
-<pinref part="U12" gate="G$1" pin="RE"/>
-<wire x1="800.1" y1="-53.34" x2="787.4" y2="-53.34" width="0.1524" layer="91"/>
-<wire x1="787.4" y1="-58.42" x2="787.4" y2="-53.34" width="0.1524" layer="91"/>
-<junction x="787.4" y="-53.34"/>
-<label x="779.78" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
 </net>
 <net name="FMC_LA13_N" class="0">
 <segment>
 <pinref part="J2" gate="C" pin="D18"/>
 <wire x1="-83.82" y1="220.98" x2="-96.52" y2="220.98" width="0.1524" layer="91"/>
 <label x="-96.52" y="220.98" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="R43" gate="G$1" pin="2"/>
-<wire x1="782.32" y1="-48.26" x2="779.78" y2="-48.26" width="0.1524" layer="91"/>
-<label x="779.78" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="FMC_TCK" class="0">
@@ -22757,14 +22685,11 @@ indicates card is attached</text>
 <label x="-5.08" y="200.66" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="284.48" y1="-53.34" x2="276.86" y2="-53.34" width="0.1524" layer="91"/>
-<pinref part="U4" gate="G$1" pin="DE"/>
-<wire x1="297.18" y1="-58.42" x2="284.48" y2="-58.42" width="0.1524" layer="91"/>
-<pinref part="U4" gate="G$1" pin="RE"/>
-<wire x1="297.18" y1="-53.34" x2="284.48" y2="-53.34" width="0.1524" layer="91"/>
-<wire x1="284.48" y1="-58.42" x2="284.48" y2="-53.34" width="0.1524" layer="91"/>
-<junction x="284.48" y="-53.34"/>
-<label x="276.86" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="R45" gate="G$1" pin="2"/>
+<wire x1="911.86" y1="7.62" x2="909.32" y2="7.62" width="0.1524" layer="91"/>
+<label x="909.32" y="7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="RJ1_FCL" gate="G$1" pin="TP"/>
+<junction x="911.86" y="7.62"/>
 </segment>
 </net>
 <net name="FMC_LA00_CC_N" class="0">
@@ -22772,99 +22697,6 @@ indicates card is attached</text>
 <pinref part="J2" gate="E" pin="G7"/>
 <wire x1="2.54" y1="198.12" x2="-5.08" y2="198.12" width="0.1524" layer="91"/>
 <label x="-5.08" y="198.12" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="R27" gate="G$1" pin="2"/>
-<wire x1="279.4" y1="-48.26" x2="276.86" y2="-48.26" width="0.1524" layer="91"/>
-<label x="276.86" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="FMC_LA03_P" class="0">
-<segment>
-<pinref part="J2" gate="E" pin="G9"/>
-<wire x1="2.54" y1="193.04" x2="-5.08" y2="193.04" width="0.1524" layer="91"/>
-<label x="-5.08" y="193.04" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="U19" gate="G$1" pin="A2"/>
-<wire x1="-86.36" y1="-53.34" x2="-88.9" y2="-53.34" width="0.1524" layer="91"/>
-<label x="-91.44" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="RJ3_FC" gate="G$1" pin="TP"/>
-<wire x1="-88.9" y1="-53.34" x2="-91.44" y2="-53.34" width="0.1524" layer="91"/>
-<junction x="-88.9" y="-53.34"/>
-</segment>
-</net>
-<net name="FMC_LA03_N" class="0">
-<segment>
-<pinref part="J2" gate="E" pin="G10"/>
-<wire x1="2.54" y1="190.5" x2="-5.08" y2="190.5" width="0.1524" layer="91"/>
-<label x="-5.08" y="190.5" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="U19" gate="G$1" pin="A1"/>
-<wire x1="-86.36" y1="-48.26" x2="-91.44" y2="-48.26" width="0.1524" layer="91"/>
-<label x="-91.44" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="FMC_LA08_P" class="0">
-<segment>
-<pinref part="J2" gate="F" pin="G12"/>
-<wire x1="48.26" y1="312.42" x2="38.1" y2="312.42" width="0.1524" layer="91"/>
-<label x="38.1" y="312.42" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="U20" gate="G$1" pin="A2"/>
-<wire x1="25.4" y1="15.24" x2="20.32" y2="15.24" width="0.1524" layer="91"/>
-<label x="20.32" y="15.24" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="FMC_LA08_N" class="0">
-<segment>
-<pinref part="J2" gate="F" pin="G13"/>
-<wire x1="48.26" y1="309.88" x2="38.1" y2="309.88" width="0.1524" layer="91"/>
-<label x="38.1" y="309.88" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="U20" gate="G$1" pin="A1"/>
-<wire x1="25.4" y1="20.32" x2="22.86" y2="20.32" width="0.1524" layer="91"/>
-<label x="20.32" y="20.32" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="RJ2_FC" gate="G$1" pin="TP"/>
-<wire x1="22.86" y1="20.32" x2="20.32" y2="20.32" width="0.1524" layer="91"/>
-<junction x="22.86" y="20.32"/>
-</segment>
-</net>
-<net name="FMC_LA12_P" class="0">
-<segment>
-<pinref part="J2" gate="F" pin="G15"/>
-<wire x1="48.26" y1="304.8" x2="38.1" y2="304.8" width="0.1524" layer="91"/>
-<label x="38.1" y="304.8" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="U21" gate="G$1" pin="A2"/>
-<wire x1="25.4" y1="-53.34" x2="20.32" y2="-53.34" width="0.1524" layer="91"/>
-<label x="20.32" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="FMC_LA12_N" class="0">
-<segment>
-<pinref part="J2" gate="F" pin="G16"/>
-<wire x1="48.26" y1="302.26" x2="38.1" y2="302.26" width="0.1524" layer="91"/>
-<label x="38.1" y="302.26" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="U21" gate="G$1" pin="A1"/>
-<wire x1="25.4" y1="-48.26" x2="22.86" y2="-48.26" width="0.1524" layer="91"/>
-<label x="20.32" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="RJ1_FC" gate="G$1" pin="TP"/>
-<wire x1="22.86" y1="-48.26" x2="20.32" y2="-48.26" width="0.1524" layer="91"/>
-<junction x="22.86" y="-48.26"/>
-</segment>
-</net>
-<net name="FMC_LA16_P" class="0">
-<segment>
-<pinref part="J2" gate="F" pin="G18"/>
-<wire x1="48.26" y1="297.18" x2="38.1" y2="297.18" width="0.1524" layer="91"/>
-<label x="38.1" y="297.18" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="916.94" y1="2.54" x2="909.32" y2="2.54" width="0.1524" layer="91"/>
@@ -22879,18 +22711,75 @@ indicates card is attached</text>
 <junction x="916.94" y="-2.54"/>
 </segment>
 </net>
+<net name="FMC_LA03_P" class="0">
+<segment>
+<pinref part="J2" gate="E" pin="G9"/>
+<wire x1="2.54" y1="193.04" x2="-5.08" y2="193.04" width="0.1524" layer="91"/>
+<label x="-5.08" y="193.04" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R43" gate="G$1" pin="2"/>
+<wire x1="782.32" y1="-48.26" x2="779.78" y2="-48.26" width="0.1524" layer="91"/>
+<label x="779.78" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA03_N" class="0">
+<segment>
+<pinref part="J2" gate="E" pin="G10"/>
+<wire x1="2.54" y1="190.5" x2="-5.08" y2="190.5" width="0.1524" layer="91"/>
+<label x="-5.08" y="190.5" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="787.4" y1="-53.34" x2="779.78" y2="-53.34" width="0.1524" layer="91"/>
+<pinref part="U12" gate="G$1" pin="DE"/>
+<wire x1="800.1" y1="-58.42" x2="787.4" y2="-58.42" width="0.1524" layer="91"/>
+<pinref part="U12" gate="G$1" pin="RE"/>
+<wire x1="800.1" y1="-53.34" x2="787.4" y2="-53.34" width="0.1524" layer="91"/>
+<wire x1="787.4" y1="-58.42" x2="787.4" y2="-53.34" width="0.1524" layer="91"/>
+<junction x="787.4" y="-53.34"/>
+<label x="779.78" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA08_P" class="0">
+<segment>
+<pinref part="J2" gate="F" pin="G12"/>
+<wire x1="48.26" y1="312.42" x2="38.1" y2="312.42" width="0.1524" layer="91"/>
+<label x="38.1" y="312.42" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA08_N" class="0">
+<segment>
+<pinref part="J2" gate="F" pin="G13"/>
+<wire x1="48.26" y1="309.88" x2="38.1" y2="309.88" width="0.1524" layer="91"/>
+<label x="38.1" y="309.88" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA12_P" class="0">
+<segment>
+<pinref part="J2" gate="F" pin="G15"/>
+<wire x1="48.26" y1="304.8" x2="38.1" y2="304.8" width="0.1524" layer="91"/>
+<label x="38.1" y="304.8" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA12_N" class="0">
+<segment>
+<pinref part="J2" gate="F" pin="G16"/>
+<wire x1="48.26" y1="302.26" x2="38.1" y2="302.26" width="0.1524" layer="91"/>
+<label x="38.1" y="302.26" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA16_P" class="0">
+<segment>
+<pinref part="J2" gate="F" pin="G18"/>
+<wire x1="48.26" y1="297.18" x2="38.1" y2="297.18" width="0.1524" layer="91"/>
+<label x="38.1" y="297.18" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
 <net name="FMC_LA16_N" class="0">
 <segment>
 <pinref part="J2" gate="F" pin="G19"/>
 <wire x1="48.26" y1="294.64" x2="38.1" y2="294.64" width="0.1524" layer="91"/>
 <label x="38.1" y="294.64" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="R45" gate="G$1" pin="2"/>
-<wire x1="911.86" y1="7.62" x2="909.32" y2="7.62" width="0.1524" layer="91"/>
-<label x="909.32" y="7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="RJ1_FCL" gate="G$1" pin="TP"/>
-<junction x="911.86" y="7.62"/>
 </segment>
 </net>
 <net name="FMC_CLK0_M2C_P" class="0">
@@ -22914,9 +22803,12 @@ indicates card is attached</text>
 <label x="38.1" y="223.52" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="-86.36" y1="15.24" x2="-91.44" y2="15.24" width="0.1524" layer="91"/>
-<pinref part="U18" gate="G$1" pin="A2"/>
-<label x="-91.44" y="15.24" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="U21" gate="G$1" pin="A1"/>
+<wire x1="25.4" y1="-48.26" x2="22.86" y2="-48.26" width="0.1524" layer="91"/>
+<label x="20.32" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="RJ1_FC" gate="G$1" pin="TP"/>
+<wire x1="22.86" y1="-48.26" x2="20.32" y2="-48.26" width="0.1524" layer="91"/>
+<junction x="22.86" y="-48.26"/>
 </segment>
 </net>
 <net name="FMC_LA02_N" class="0">
@@ -22926,9 +22818,9 @@ indicates card is attached</text>
 <label x="38.1" y="220.98" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="R57" gate="G$1" pin="2"/>
-<wire x1="-27.94" y1="68.58" x2="-30.48" y2="68.58" width="0.1524" layer="91"/>
-<label x="-30.48" y="68.58" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="U21" gate="G$1" pin="A2"/>
+<wire x1="25.4" y1="-53.34" x2="20.32" y2="-53.34" width="0.1524" layer="91"/>
+<label x="20.32" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="FMC_LA04_P" class="0">
@@ -22938,14 +22830,9 @@ indicates card is attached</text>
 <label x="38.1" y="215.9" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="414.02" y1="-53.34" x2="406.4" y2="-53.34" width="0.1524" layer="91"/>
-<pinref part="U6" gate="G$1" pin="DE"/>
-<wire x1="426.72" y1="-58.42" x2="414.02" y2="-58.42" width="0.1524" layer="91"/>
-<pinref part="U6" gate="G$1" pin="RE"/>
-<wire x1="426.72" y1="-53.34" x2="414.02" y2="-53.34" width="0.1524" layer="91"/>
-<wire x1="414.02" y1="-58.42" x2="414.02" y2="-53.34" width="0.1524" layer="91"/>
-<junction x="414.02" y="-53.34"/>
-<label x="406.4" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="R41" gate="G$1" pin="2"/>
+<wire x1="782.32" y1="7.62" x2="779.78" y2="7.62" width="0.1524" layer="91"/>
+<label x="779.78" y="7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="FMC_LA04_N" class="0">
@@ -22955,9 +22842,14 @@ indicates card is attached</text>
 <label x="38.1" y="213.36" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="R31" gate="G$1" pin="2"/>
-<wire x1="408.94" y1="-48.26" x2="406.4" y2="-48.26" width="0.1524" layer="91"/>
-<label x="406.4" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="787.4" y1="2.54" x2="779.78" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="U11" gate="G$1" pin="DE"/>
+<wire x1="800.1" y1="-2.54" x2="787.4" y2="-2.54" width="0.1524" layer="91"/>
+<pinref part="U11" gate="G$1" pin="RE"/>
+<wire x1="800.1" y1="2.54" x2="787.4" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="787.4" y1="-2.54" x2="787.4" y2="2.54" width="0.1524" layer="91"/>
+<junction x="787.4" y="2.54"/>
+<label x="779.78" y="2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="FMC_LA07_P" class="0">
@@ -22967,14 +22859,11 @@ indicates card is attached</text>
 <label x="38.1" y="208.28" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="1033.78" y1="-53.34" x2="1026.16" y2="-53.34" width="0.1524" layer="91"/>
-<pinref part="U16" gate="G$1" pin="DE"/>
-<wire x1="1046.48" y1="-58.42" x2="1033.78" y2="-58.42" width="0.1524" layer="91"/>
-<pinref part="U16" gate="G$1" pin="RE"/>
-<wire x1="1046.48" y1="-53.34" x2="1033.78" y2="-53.34" width="0.1524" layer="91"/>
-<wire x1="1033.78" y1="-58.42" x2="1033.78" y2="-53.34" width="0.1524" layer="91"/>
-<junction x="1033.78" y="-53.34"/>
-<label x="1026.16" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="R39" gate="G$1" pin="2"/>
+<wire x1="652.78" y1="-48.26" x2="650.24" y2="-48.26" width="0.1524" layer="91"/>
+<label x="650.24" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="RJ2_FDA" gate="G$1" pin="TP"/>
+<junction x="652.78" y="-48.26"/>
 </segment>
 </net>
 <net name="FMC_LA07_N" class="0">
@@ -22984,9 +22873,16 @@ indicates card is attached</text>
 <label x="38.1" y="205.74" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="R51" gate="G$1" pin="2"/>
-<wire x1="1028.7" y1="-48.26" x2="1026.16" y2="-48.26" width="0.1524" layer="91"/>
-<label x="1026.16" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="657.86" y1="-53.34" x2="650.24" y2="-53.34" width="0.1524" layer="91"/>
+<pinref part="U10" gate="G$1" pin="DE"/>
+<wire x1="670.56" y1="-58.42" x2="657.86" y2="-58.42" width="0.1524" layer="91"/>
+<pinref part="U10" gate="G$1" pin="RE"/>
+<wire x1="670.56" y1="-53.34" x2="657.86" y2="-53.34" width="0.1524" layer="91"/>
+<wire x1="657.86" y1="-58.42" x2="657.86" y2="-53.34" width="0.1524" layer="91"/>
+<junction x="657.86" y="-53.34"/>
+<label x="650.24" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="RJ2_FDD" gate="G$1" pin="TP"/>
+<junction x="657.86" y="-58.42"/>
 </segment>
 </net>
 <net name="FMC_LA11_P" class="0">
@@ -22996,14 +22892,11 @@ indicates card is attached</text>
 <label x="38.1" y="200.66" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="1033.78" y1="2.54" x2="1026.16" y2="2.54" width="0.1524" layer="91"/>
-<pinref part="U15" gate="G$1" pin="DE"/>
-<wire x1="1046.48" y1="-2.54" x2="1033.78" y2="-2.54" width="0.1524" layer="91"/>
-<pinref part="U15" gate="G$1" pin="RE"/>
-<wire x1="1046.48" y1="2.54" x2="1033.78" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="1033.78" y1="-2.54" x2="1033.78" y2="2.54" width="0.1524" layer="91"/>
-<junction x="1033.78" y="2.54"/>
-<label x="1026.16" y="2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="R37" gate="G$1" pin="2"/>
+<wire x1="652.78" y1="7.62" x2="650.24" y2="7.62" width="0.1524" layer="91"/>
+<label x="650.24" y="7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="RJ2_FCL" gate="G$1" pin="TP"/>
+<junction x="652.78" y="7.62"/>
 </segment>
 </net>
 <net name="FMC_LA11_N" class="0">
@@ -23013,9 +22906,16 @@ indicates card is attached</text>
 <label x="38.1" y="198.12" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="R49" gate="G$1" pin="2"/>
-<wire x1="1028.7" y1="7.62" x2="1026.16" y2="7.62" width="0.1524" layer="91"/>
-<label x="1026.16" y="7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="657.86" y1="2.54" x2="650.24" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="U9" gate="G$1" pin="DE"/>
+<wire x1="670.56" y1="-2.54" x2="657.86" y2="-2.54" width="0.1524" layer="91"/>
+<pinref part="U9" gate="G$1" pin="RE"/>
+<wire x1="670.56" y1="2.54" x2="657.86" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="657.86" y1="-2.54" x2="657.86" y2="2.54" width="0.1524" layer="91"/>
+<junction x="657.86" y="2.54"/>
+<label x="650.24" y="2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="RJ2_FCD" gate="G$1" pin="TP"/>
+<junction x="657.86" y="-2.54"/>
 </segment>
 </net>
 <net name="FMC_LA15_P" class="0">
@@ -23025,16 +22925,12 @@ indicates card is attached</text>
 <label x="38.1" y="193.04" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="916.94" y1="-53.34" x2="909.32" y2="-53.34" width="0.1524" layer="91"/>
-<pinref part="U14" gate="G$1" pin="DE"/>
-<wire x1="929.64" y1="-58.42" x2="916.94" y2="-58.42" width="0.1524" layer="91"/>
-<pinref part="U14" gate="G$1" pin="RE"/>
-<wire x1="929.64" y1="-53.34" x2="916.94" y2="-53.34" width="0.1524" layer="91"/>
-<wire x1="916.94" y1="-58.42" x2="916.94" y2="-53.34" width="0.1524" layer="91"/>
-<junction x="916.94" y="-53.34"/>
-<label x="909.32" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="RJ1_FDD" gate="G$1" pin="TP"/>
-<junction x="916.94" y="-58.42"/>
+<pinref part="U20" gate="G$1" pin="A1"/>
+<wire x1="25.4" y1="20.32" x2="22.86" y2="20.32" width="0.1524" layer="91"/>
+<label x="20.32" y="20.32" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="RJ2_FC" gate="G$1" pin="TP"/>
+<wire x1="22.86" y1="20.32" x2="20.32" y2="20.32" width="0.1524" layer="91"/>
+<junction x="22.86" y="20.32"/>
 </segment>
 </net>
 <net name="FMC_LA15_N" class="0">
@@ -23044,11 +22940,9 @@ indicates card is attached</text>
 <label x="38.1" y="190.5" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="R47" gate="G$1" pin="2"/>
-<wire x1="911.86" y1="-48.26" x2="909.32" y2="-48.26" width="0.1524" layer="91"/>
-<label x="909.32" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="RJ1_FDA" gate="G$1" pin="TP"/>
-<junction x="911.86" y="-48.26"/>
+<pinref part="U20" gate="G$1" pin="A2"/>
+<wire x1="25.4" y1="15.24" x2="20.32" y2="15.24" width="0.1524" layer="91"/>
+<label x="20.32" y="15.24" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="RJ1_DATA_P" class="0">
@@ -23523,14 +23417,6 @@ indicates card is attached</text>
 <junction x="162.56" y="7.62"/>
 </segment>
 </net>
-<net name="I2C_RESET" class="0">
-<segment>
-<pinref part="U17" gate="G$1" pin="RESET"/>
-<wire x1="-284.48" y1="10.16" x2="-302.26" y2="10.16" width="0.1524" layer="91"/>
-<pinref part="R7" gate="G$1" pin="1"/>
-<wire x1="-302.26" y1="22.86" x2="-302.26" y2="10.16" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="LSIO2" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="DI"/>
@@ -23806,44 +23692,6 @@ indicates card is attached</text>
 <label x="20.32" y="-38.1" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="FMC_HA01_CC_P" class="0">
-<segment>
-<pinref part="R2" gate="G$1" pin="2"/>
-<wire x1="149.86" y1="7.62" x2="147.32" y2="7.62" width="0.1524" layer="91"/>
-<label x="147.32" y="7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="FMC_HA01_CC_N" class="0">
-<segment>
-<wire x1="154.94" y1="2.54" x2="147.32" y2="2.54" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="DE"/>
-<wire x1="167.64" y1="-2.54" x2="154.94" y2="-2.54" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="RE"/>
-<wire x1="167.64" y1="2.54" x2="154.94" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="154.94" y1="-2.54" x2="154.94" y2="2.54" width="0.1524" layer="91"/>
-<junction x="154.94" y="2.54"/>
-<label x="147.32" y="2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="FMC_HA00_CC_P" class="0">
-<segment>
-<wire x1="154.94" y1="-53.34" x2="147.32" y2="-53.34" width="0.1524" layer="91"/>
-<pinref part="U2" gate="G$1" pin="DE"/>
-<wire x1="167.64" y1="-58.42" x2="154.94" y2="-58.42" width="0.1524" layer="91"/>
-<pinref part="U2" gate="G$1" pin="RE"/>
-<wire x1="167.64" y1="-53.34" x2="154.94" y2="-53.34" width="0.1524" layer="91"/>
-<wire x1="154.94" y1="-58.42" x2="154.94" y2="-53.34" width="0.1524" layer="91"/>
-<junction x="154.94" y="-53.34"/>
-<label x="147.32" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="FMC_HA00_CC_N" class="0">
-<segment>
-<pinref part="R23" gate="G$1" pin="2"/>
-<wire x1="149.86" y1="-48.26" x2="147.32" y2="-48.26" width="0.1524" layer="91"/>
-<label x="147.32" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
 <net name="N$2" class="3">
 <segment>
 <pinref part="12V_GOOD" gate="G$1" pin="C"/>
@@ -23860,16 +23708,6 @@ indicates card is attached</text>
 <segment>
 <pinref part="5V_GOOD" gate="G$1" pin="C"/>
 <pinref part="R53" gate="G$1" pin="2"/>
-</segment>
-</net>
-<net name="FMC_HA05_N" class="0">
-<segment>
-<pinref part="U18" gate="G$1" pin="A1"/>
-<wire x1="-86.36" y1="20.32" x2="-116.84" y2="20.32" width="0.1524" layer="91"/>
-<label x="-121.92" y="20.32" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="R59" gate="G$1" pin="1"/>
-<wire x1="-116.84" y1="20.32" x2="-121.92" y2="20.32" width="0.1524" layer="91"/>
-<junction x="-116.84" y="20.32"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -23895,6 +23733,448 @@ indicates card is attached</text>
 <pinref part="R62" gate="G$1" pin="1"/>
 <pinref part="1V8_GOOD" gate="G$1" pin="C"/>
 <wire x1="30.48" y1="401.32" x2="30.48" y2="403.86" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="FMC_LA18_CC_P" class="0">
+<segment>
+<pinref part="J2" gate="C" pin="C22"/>
+<wire x1="-83.82" y1="312.42" x2="-99.06" y2="312.42" width="0.1524" layer="91"/>
+<label x="-99.06" y="312.42" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA18_CC_N" class="0">
+<segment>
+<pinref part="J2" gate="C" pin="C23"/>
+<wire x1="-83.82" y1="309.88" x2="-99.06" y2="309.88" width="0.1524" layer="91"/>
+<label x="-99.06" y="309.88" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA27_P" class="0">
+<segment>
+<pinref part="J2" gate="C" pin="C26"/>
+<wire x1="-83.82" y1="302.26" x2="-99.06" y2="302.26" width="0.1524" layer="91"/>
+<label x="-99.06" y="302.26" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA27_N" class="0">
+<segment>
+<pinref part="J2" gate="C" pin="C27"/>
+<wire x1="-83.82" y1="299.72" x2="-99.06" y2="299.72" width="0.1524" layer="91"/>
+<label x="-99.06" y="299.72" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA17_CC_P" class="0">
+<segment>
+<pinref part="J2" gate="C" pin="D20"/>
+<wire x1="-83.82" y1="215.9" x2="-96.52" y2="215.9" width="0.1524" layer="91"/>
+<label x="-96.52" y="215.9" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA17_CC_N" class="0">
+<segment>
+<pinref part="J2" gate="C" pin="D21"/>
+<wire x1="-83.82" y1="213.36" x2="-96.52" y2="213.36" width="0.1524" layer="91"/>
+<label x="-96.52" y="213.36" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA23_P" class="0">
+<segment>
+<pinref part="J2" gate="C" pin="D23"/>
+<wire x1="-83.82" y1="208.28" x2="-96.52" y2="208.28" width="0.1524" layer="91"/>
+<label x="-96.52" y="208.28" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA23_N" class="0">
+<segment>
+<pinref part="J2" gate="C" pin="D24"/>
+<wire x1="-83.82" y1="205.74" x2="-96.52" y2="205.74" width="0.1524" layer="91"/>
+<label x="-96.52" y="205.74" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA26_P" class="0">
+<segment>
+<pinref part="J2" gate="C" pin="D26"/>
+<wire x1="-83.82" y1="200.66" x2="-96.52" y2="200.66" width="0.1524" layer="91"/>
+<label x="-96.52" y="200.66" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA26_N" class="0">
+<segment>
+<pinref part="J2" gate="C" pin="D27"/>
+<wire x1="-83.82" y1="198.12" x2="-96.52" y2="198.12" width="0.1524" layer="91"/>
+<label x="-96.52" y="198.12" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA20_P" class="0">
+<segment>
+<pinref part="J2" gate="F" pin="G21"/>
+<wire x1="48.26" y1="289.56" x2="38.1" y2="289.56" width="0.1524" layer="91"/>
+<label x="38.1" y="289.56" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA20_N" class="0">
+<segment>
+<pinref part="J2" gate="F" pin="G22"/>
+<wire x1="48.26" y1="287.02" x2="38.1" y2="287.02" width="0.1524" layer="91"/>
+<label x="38.1" y="287.02" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA22_P" class="0">
+<segment>
+<pinref part="J2" gate="F" pin="G24"/>
+<wire x1="48.26" y1="281.94" x2="38.1" y2="281.94" width="0.1524" layer="91"/>
+<label x="38.1" y="281.94" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U17" gate="G$1" pin="RESET"/>
+<wire x1="-284.48" y1="10.16" x2="-302.26" y2="10.16" width="0.1524" layer="91"/>
+<pinref part="R7" gate="G$1" pin="1"/>
+<wire x1="-302.26" y1="22.86" x2="-302.26" y2="10.16" width="0.1524" layer="91"/>
+<label x="-304.8" y="10.16" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="-302.26" y1="10.16" x2="-304.8" y2="10.16" width="0.1524" layer="91"/>
+<junction x="-302.26" y="10.16"/>
+</segment>
+</net>
+<net name="FMC_LA22_N" class="0">
+<segment>
+<pinref part="J2" gate="F" pin="G25"/>
+<wire x1="48.26" y1="279.4" x2="38.1" y2="279.4" width="0.1524" layer="91"/>
+<label x="38.1" y="279.4" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R57" gate="G$1" pin="2"/>
+<wire x1="-27.94" y1="68.58" x2="-30.48" y2="68.58" width="0.1524" layer="91"/>
+<label x="-30.48" y="68.58" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA25_P" class="0">
+<segment>
+<pinref part="J2" gate="F" pin="G27"/>
+<wire x1="48.26" y1="274.32" x2="38.1" y2="274.32" width="0.1524" layer="91"/>
+<label x="38.1" y="274.32" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R33" gate="G$1" pin="2"/>
+<wire x1="525.78" y1="7.62" x2="523.24" y2="7.62" width="0.1524" layer="91"/>
+<label x="523.24" y="7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="RJ3_FCL" gate="G$1" pin="TP"/>
+<junction x="525.78" y="7.62"/>
+</segment>
+</net>
+<net name="FMC_LA25_N" class="0">
+<segment>
+<pinref part="J2" gate="F" pin="G28"/>
+<wire x1="48.26" y1="271.78" x2="38.1" y2="271.78" width="0.1524" layer="91"/>
+<label x="38.1" y="271.78" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="530.86" y1="2.54" x2="523.24" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="U7" gate="G$1" pin="DE"/>
+<wire x1="543.56" y1="-2.54" x2="530.86" y2="-2.54" width="0.1524" layer="91"/>
+<pinref part="U7" gate="G$1" pin="RE"/>
+<wire x1="543.56" y1="2.54" x2="530.86" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="530.86" y1="-2.54" x2="530.86" y2="2.54" width="0.1524" layer="91"/>
+<junction x="530.86" y="2.54"/>
+<label x="523.24" y="2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="RJ3_FCD" gate="G$1" pin="TP"/>
+<junction x="530.86" y="-2.54"/>
+</segment>
+</net>
+<net name="FMC_LA29_P" class="0">
+<segment>
+<pinref part="J2" gate="F" pin="G30"/>
+<wire x1="48.26" y1="266.7" x2="38.1" y2="266.7" width="0.1524" layer="91"/>
+<label x="38.1" y="266.7" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U18" gate="G$1" pin="A1"/>
+<wire x1="-86.36" y1="20.32" x2="-116.84" y2="20.32" width="0.1524" layer="91"/>
+<label x="-121.92" y="20.32" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="R59" gate="G$1" pin="1"/>
+<wire x1="-116.84" y1="20.32" x2="-121.92" y2="20.32" width="0.1524" layer="91"/>
+<junction x="-116.84" y="20.32"/>
+</segment>
+</net>
+<net name="FMC_LA29_N" class="0">
+<segment>
+<pinref part="J2" gate="F" pin="G31"/>
+<wire x1="48.26" y1="264.16" x2="38.1" y2="264.16" width="0.1524" layer="91"/>
+<label x="38.1" y="264.16" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="-86.36" y1="15.24" x2="-91.44" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="U18" gate="G$1" pin="A2"/>
+<label x="-91.44" y="15.24" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA31_P" class="0">
+<segment>
+<pinref part="J2" gate="F" pin="G33"/>
+<wire x1="48.26" y1="259.08" x2="38.1" y2="259.08" width="0.1524" layer="91"/>
+<label x="38.1" y="259.08" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="284.48" y1="2.54" x2="276.86" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="U3" gate="G$1" pin="DE"/>
+<wire x1="297.18" y1="-2.54" x2="284.48" y2="-2.54" width="0.1524" layer="91"/>
+<pinref part="U3" gate="G$1" pin="RE"/>
+<wire x1="297.18" y1="2.54" x2="284.48" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="284.48" y1="-2.54" x2="284.48" y2="2.54" width="0.1524" layer="91"/>
+<junction x="284.48" y="2.54"/>
+<label x="276.86" y="2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA31_N" class="0">
+<segment>
+<pinref part="J2" gate="F" pin="G34"/>
+<wire x1="48.26" y1="256.54" x2="38.1" y2="256.54" width="0.1524" layer="91"/>
+<label x="38.1" y="256.54" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R25" gate="G$1" pin="2"/>
+<wire x1="279.4" y1="7.62" x2="276.86" y2="7.62" width="0.1524" layer="91"/>
+<label x="276.86" y="7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA33_P" class="0">
+<segment>
+<pinref part="J2" gate="F" pin="G36"/>
+<wire x1="48.26" y1="251.46" x2="38.1" y2="251.46" width="0.1524" layer="91"/>
+<label x="38.1" y="251.46" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R2" gate="G$1" pin="2"/>
+<wire x1="149.86" y1="7.62" x2="147.32" y2="7.62" width="0.1524" layer="91"/>
+<label x="147.32" y="7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA33_N" class="0">
+<segment>
+<pinref part="J2" gate="F" pin="G37"/>
+<wire x1="48.26" y1="248.92" x2="38.1" y2="248.92" width="0.1524" layer="91"/>
+<label x="38.1" y="248.92" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="154.94" y1="2.54" x2="147.32" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="DE"/>
+<wire x1="167.64" y1="-2.54" x2="154.94" y2="-2.54" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="RE"/>
+<wire x1="167.64" y1="2.54" x2="154.94" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="154.94" y1="-2.54" x2="154.94" y2="2.54" width="0.1524" layer="91"/>
+<junction x="154.94" y="2.54"/>
+<label x="147.32" y="2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA19_P" class="0">
+<segment>
+<pinref part="J2" gate="G" pin="H22"/>
+<wire x1="96.52" y1="312.42" x2="86.36" y2="312.42" width="0.1524" layer="91"/>
+<label x="86.36" y="312.42" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U19" gate="G$1" pin="A1"/>
+<wire x1="-86.36" y1="-48.26" x2="-91.44" y2="-48.26" width="0.1524" layer="91"/>
+<label x="-91.44" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA19_N" class="0">
+<segment>
+<pinref part="J2" gate="G" pin="H23"/>
+<wire x1="96.52" y1="309.88" x2="86.36" y2="309.88" width="0.1524" layer="91"/>
+<label x="86.36" y="309.88" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U19" gate="G$1" pin="A2"/>
+<wire x1="-86.36" y1="-53.34" x2="-88.9" y2="-53.34" width="0.1524" layer="91"/>
+<label x="-91.44" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="RJ3_FC" gate="G$1" pin="TP"/>
+<wire x1="-88.9" y1="-53.34" x2="-91.44" y2="-53.34" width="0.1524" layer="91"/>
+<junction x="-88.9" y="-53.34"/>
+</segment>
+</net>
+<net name="FMC_LA21_P" class="0">
+<segment>
+<pinref part="J2" gate="G" pin="H25"/>
+<wire x1="96.52" y1="304.8" x2="86.36" y2="304.8" width="0.1524" layer="91"/>
+<label x="86.36" y="304.8" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R35" gate="G$1" pin="2"/>
+<wire x1="525.78" y1="-48.26" x2="523.24" y2="-48.26" width="0.1524" layer="91"/>
+<label x="523.24" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="RJ3_FDA" gate="G$1" pin="TP"/>
+<junction x="525.78" y="-48.26"/>
+</segment>
+</net>
+<net name="FMC_LA21_N" class="0">
+<segment>
+<pinref part="J2" gate="G" pin="H26"/>
+<wire x1="96.52" y1="302.26" x2="86.36" y2="302.26" width="0.1524" layer="91"/>
+<label x="86.36" y="302.26" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="530.86" y1="-53.34" x2="523.24" y2="-53.34" width="0.1524" layer="91"/>
+<pinref part="U8" gate="G$1" pin="DE"/>
+<wire x1="543.56" y1="-58.42" x2="530.86" y2="-58.42" width="0.1524" layer="91"/>
+<pinref part="U8" gate="G$1" pin="RE"/>
+<wire x1="543.56" y1="-53.34" x2="530.86" y2="-53.34" width="0.1524" layer="91"/>
+<wire x1="530.86" y1="-58.42" x2="530.86" y2="-53.34" width="0.1524" layer="91"/>
+<junction x="530.86" y="-53.34"/>
+<label x="523.24" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="RJ3_FDD" gate="G$1" pin="TP"/>
+<junction x="530.86" y="-58.42"/>
+</segment>
+</net>
+<net name="FMC_LA24_P" class="0">
+<segment>
+<pinref part="J2" gate="G" pin="H28"/>
+<wire x1="96.52" y1="297.18" x2="86.36" y2="297.18" width="0.1524" layer="91"/>
+<label x="86.36" y="297.18" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R31" gate="G$1" pin="2"/>
+<wire x1="408.94" y1="-48.26" x2="406.4" y2="-48.26" width="0.1524" layer="91"/>
+<label x="406.4" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA24_N" class="0">
+<segment>
+<pinref part="J2" gate="G" pin="H29"/>
+<wire x1="96.52" y1="294.64" x2="86.36" y2="294.64" width="0.1524" layer="91"/>
+<label x="86.36" y="294.64" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="414.02" y1="-53.34" x2="406.4" y2="-53.34" width="0.1524" layer="91"/>
+<pinref part="U6" gate="G$1" pin="DE"/>
+<wire x1="426.72" y1="-58.42" x2="414.02" y2="-58.42" width="0.1524" layer="91"/>
+<pinref part="U6" gate="G$1" pin="RE"/>
+<wire x1="426.72" y1="-53.34" x2="414.02" y2="-53.34" width="0.1524" layer="91"/>
+<wire x1="414.02" y1="-58.42" x2="414.02" y2="-53.34" width="0.1524" layer="91"/>
+<junction x="414.02" y="-53.34"/>
+<label x="406.4" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA28_P" class="0">
+<segment>
+<pinref part="J2" gate="G" pin="H31"/>
+<wire x1="96.52" y1="289.56" x2="86.36" y2="289.56" width="0.1524" layer="91"/>
+<label x="86.36" y="289.56" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R29" gate="G$1" pin="2"/>
+<wire x1="408.94" y1="7.62" x2="406.4" y2="7.62" width="0.1524" layer="91"/>
+<label x="406.4" y="7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA28_N" class="0">
+<segment>
+<pinref part="J2" gate="G" pin="H32"/>
+<wire x1="96.52" y1="287.02" x2="86.36" y2="287.02" width="0.1524" layer="91"/>
+<label x="86.36" y="287.02" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="414.02" y1="2.54" x2="406.4" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="U5" gate="G$1" pin="DE"/>
+<wire x1="426.72" y1="-2.54" x2="414.02" y2="-2.54" width="0.1524" layer="91"/>
+<pinref part="U5" gate="G$1" pin="RE"/>
+<wire x1="426.72" y1="2.54" x2="414.02" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="414.02" y1="-2.54" x2="414.02" y2="2.54" width="0.1524" layer="91"/>
+<junction x="414.02" y="2.54"/>
+<label x="406.4" y="2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA30_P" class="0">
+<segment>
+<pinref part="J2" gate="G" pin="H34"/>
+<wire x1="96.52" y1="281.94" x2="86.36" y2="281.94" width="0.1524" layer="91"/>
+<label x="86.36" y="281.94" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R27" gate="G$1" pin="2"/>
+<wire x1="279.4" y1="-48.26" x2="276.86" y2="-48.26" width="0.1524" layer="91"/>
+<label x="276.86" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA30_N" class="0">
+<segment>
+<pinref part="J2" gate="G" pin="H35"/>
+<wire x1="96.52" y1="279.4" x2="86.36" y2="279.4" width="0.1524" layer="91"/>
+<label x="86.36" y="279.4" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="284.48" y1="-53.34" x2="276.86" y2="-53.34" width="0.1524" layer="91"/>
+<pinref part="U4" gate="G$1" pin="DE"/>
+<wire x1="297.18" y1="-58.42" x2="284.48" y2="-58.42" width="0.1524" layer="91"/>
+<pinref part="U4" gate="G$1" pin="RE"/>
+<wire x1="297.18" y1="-53.34" x2="284.48" y2="-53.34" width="0.1524" layer="91"/>
+<wire x1="284.48" y1="-58.42" x2="284.48" y2="-53.34" width="0.1524" layer="91"/>
+<junction x="284.48" y="-53.34"/>
+<label x="276.86" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA32_P" class="0">
+<segment>
+<pinref part="J2" gate="G" pin="H37"/>
+<wire x1="96.52" y1="274.32" x2="86.36" y2="274.32" width="0.1524" layer="91"/>
+<label x="86.36" y="274.32" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R23" gate="G$1" pin="2"/>
+<wire x1="149.86" y1="-48.26" x2="147.32" y2="-48.26" width="0.1524" layer="91"/>
+<label x="147.32" y="-48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FMC_LA32_N" class="0">
+<segment>
+<pinref part="J2" gate="G" pin="H38"/>
+<wire x1="96.52" y1="271.78" x2="86.36" y2="271.78" width="0.1524" layer="91"/>
+<label x="86.36" y="271.78" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="154.94" y1="-53.34" x2="147.32" y2="-53.34" width="0.1524" layer="91"/>
+<pinref part="U2" gate="G$1" pin="DE"/>
+<wire x1="167.64" y1="-58.42" x2="154.94" y2="-58.42" width="0.1524" layer="91"/>
+<pinref part="U2" gate="G$1" pin="RE"/>
+<wire x1="167.64" y1="-53.34" x2="154.94" y2="-53.34" width="0.1524" layer="91"/>
+<wire x1="154.94" y1="-58.42" x2="154.94" y2="-53.34" width="0.1524" layer="91"/>
+<junction x="154.94" y="-53.34"/>
+<label x="147.32" y="-53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="I2C_SDA" class="0">
+<segment>
+<pinref part="U17" gate="G$1" pin="SDA"/>
+<wire x1="-284.48" y1="20.32" x2="-297.18" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="R5" gate="G$1" pin="1"/>
+<wire x1="-297.18" y1="20.32" x2="-312.42" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="-312.42" y1="22.86" x2="-312.42" y2="20.32" width="0.1524" layer="91"/>
+<junction x="-312.42" y="20.32"/>
+<pinref part="M_SDA" gate="G$1" pin="TP"/>
+<junction x="-297.18" y="20.32"/>
+<pinref part="R65" gate="G$1" pin="1"/>
+<wire x1="-312.42" y1="20.32" x2="-340.36" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="-340.36" y1="20.32" x2="-340.36" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="R63" gate="G$1" pin="2"/>
+<wire x1="-340.36" y1="20.32" x2="-340.36" y2="10.16" width="0.1524" layer="91"/>
+<junction x="-340.36" y="20.32"/>
+</segment>
+</net>
+<net name="I2C_SCL" class="0">
+<segment>
+<pinref part="U17" gate="G$1" pin="SCL"/>
+<wire x1="-284.48" y1="15.24" x2="-294.64" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="R6" gate="G$1" pin="1"/>
+<wire x1="-294.64" y1="15.24" x2="-307.34" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="-307.34" y1="22.86" x2="-307.34" y2="15.24" width="0.1524" layer="91"/>
+<junction x="-307.34" y="15.24"/>
+<pinref part="M_SCL" gate="G$1" pin="TP"/>
+<junction x="-294.64" y="15.24"/>
+<pinref part="R66" gate="G$1" pin="1"/>
+<wire x1="-307.34" y1="15.24" x2="-335.28" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="-335.28" y1="15.24" x2="-335.28" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="R64" gate="G$1" pin="2"/>
+<wire x1="-335.28" y1="15.24" x2="-335.28" y2="10.16" width="0.1524" layer="91"/>
+<junction x="-335.28" y="15.24"/>
 </segment>
 </net>
 </nets>
