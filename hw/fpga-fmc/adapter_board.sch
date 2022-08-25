@@ -19347,8 +19347,8 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="RJ2_SCL" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="RJ3_SDO" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="RJ3_SCL" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
-<part name="M_SDA" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
-<part name="M_SCL" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
+<part name="MSDA" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
+<part name="MSCL" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="RJ1_CONV" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="RJ2_CONV" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="RJ3_CONV" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
@@ -19391,10 +19391,10 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="1V8_GOOD" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_0805" package3d_urn="urn:adsk.eagle:package:15821/2"/>
 <part name="GND77" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="0V" device=""/>
 <part name="+3V6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
-<part name="R63" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="0R"/>
-<part name="R64" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="0R"/>
-<part name="R65" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="0R DNP"/>
-<part name="R66" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="0R DNP"/>
+<part name="R63" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="0R DNP"/>
+<part name="R64" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="0R DNP"/>
+<part name="R65" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="0R"/>
+<part name="R66" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="0R"/>
 <part name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-2X10" device="" package3d_urn="urn:adsk.eagle:package:22405/2"/>
 <part name="GND78" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="0V" device=""/>
 </parts>
@@ -20230,11 +20230,11 @@ indicates card is attached</text>
 <attribute name="NAME" x="-229.87" y="11.43" size="1.778" layer="95"/>
 <attribute name="TP_SIGNAL_NAME" x="-214.63" y="11.43" size="1.778" layer="97"/>
 </instance>
-<instance part="M_SDA" gate="G$1" x="-297.18" y="22.86" smashed="yes">
+<instance part="MSDA" gate="G$1" x="-297.18" y="22.86" smashed="yes">
 <attribute name="NAME" x="-311.15" y="21.59" size="1.778" layer="95"/>
 <attribute name="TP_SIGNAL_NAME" x="-295.91" y="21.59" size="1.778" layer="97"/>
 </instance>
-<instance part="M_SCL" gate="G$1" x="-294.64" y="17.78" smashed="yes">
+<instance part="MSCL" gate="G$1" x="-294.64" y="17.78" smashed="yes">
 <attribute name="NAME" x="-308.61" y="16.51" size="1.778" layer="95"/>
 <attribute name="TP_SIGNAL_NAME" x="-293.37" y="16.51" size="1.778" layer="97"/>
 </instance>
@@ -24438,7 +24438,7 @@ indicates card is attached</text>
 <wire x1="-297.18" y1="20.32" x2="-312.42" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="-312.42" y1="22.86" x2="-312.42" y2="20.32" width="0.1524" layer="91"/>
 <junction x="-312.42" y="20.32"/>
-<pinref part="M_SDA" gate="G$1" pin="TP"/>
+<pinref part="MSDA" gate="G$1" pin="TP"/>
 <junction x="-297.18" y="20.32"/>
 <pinref part="R65" gate="G$1" pin="1"/>
 <wire x1="-312.42" y1="20.32" x2="-340.36" y2="20.32" width="0.1524" layer="91"/>
@@ -24456,7 +24456,7 @@ indicates card is attached</text>
 <wire x1="-294.64" y1="15.24" x2="-307.34" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="-307.34" y1="22.86" x2="-307.34" y2="15.24" width="0.1524" layer="91"/>
 <junction x="-307.34" y="15.24"/>
-<pinref part="M_SCL" gate="G$1" pin="TP"/>
+<pinref part="MSCL" gate="G$1" pin="TP"/>
 <junction x="-294.64" y="15.24"/>
 <pinref part="R66" gate="G$1" pin="1"/>
 <wire x1="-307.34" y1="15.24" x2="-335.28" y2="15.24" width="0.1524" layer="91"/>
