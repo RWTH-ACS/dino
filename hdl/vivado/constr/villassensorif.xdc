@@ -74,17 +74,10 @@ set_property IOSTANDARD LVCMOS18    [get_ports conv_3]
 #    RJ4_CONV    <-> FMC_LA02_P    <-> L20 | K22
 #    RJ4_SCL     <-> SC3           <-> FMC_LA05_N
 #    RJ4_SDO     <-> SD3           <-> FMC_LA05_P
-set_property PACKAGE_PIN AJ5        [get_ports serial_clk_4]
-set_property IOSTANDARD LVCMOS18    [get_ports serial_clk_4]
-set_property PACKAGE_PIN AJ6        [get_ports {serial_clk_de[3]}]
+set_property PACKAGE_PIN K22        [get_ports {serial_clk_de[3]}]
 set_property IOSTANDARD LVCMOS18    [get_ports {serial_clk_de[3]}]
-set_property PACKAGE_PIN B19        [get_ports serial_data_4]
-set_property IOSTANDARD LVCMOS18    [get_ports serial_data_4]
 set_property PACKAGE_PIN B18        [get_ports {serial_data_de[3]}]
 set_property IOSTANDARD LVCMOS18    [get_ports {serial_data_de[3]}]
-set_property PACKAGE_PIN K22        [get_ports conv_4]
-set_property IOSTANDARD LVCMOS18    [get_ports conv_4]
-
 # RJ5 interface (HPC0 | HPC1)
 #    RJ5_CLK     <-> FMC_LA11_N    <-> A12 | A21
 #    RJ5_CLK_DE  <-> FMC_LA11_P    <-> A13 | A20
@@ -131,16 +124,10 @@ set_property IOSTANDARD LVCMOS18    [get_ports conv_6]
 #    RJ7_CONV    <-> FMC_LA03_N    <-> K18 | J22
 #    RJ7_SCL     <-> SC0           <-> FMC_LA05_N
 #    RJ7_SDO     <-> SD0           <-> FMC_LA05_P
-set_property PACKAGE_PIN AK3        [get_ports serial_clk_7]
-set_property IOSTANDARD LVCMOS18    [get_ports serial_clk_7]
-set_property PACKAGE_PIN AK4        [get_ports {serial_clk_de[6]}]
+set_property PACKAGE_PIN J22        [get_ports {serial_clk_de[6]}]
 set_property IOSTANDARD LVCMOS18    [get_ports {serial_clk_de[6]}]
-set_property PACKAGE_PIN H24        [get_ports serial_data_7]
-set_property IOSTANDARD LVCMOS18    [get_ports serial_data_7]
 set_property PACKAGE_PIN J24        [get_ports {serial_data_de[6]}]
 set_property IOSTANDARD LVCMOS18    [get_ports {serial_data_de[6]}]
-set_property PACKAGE_PIN J22        [get_ports conv_7]
-set_property IOSTANDARD LVCMOS18    [get_ports conv_7]
 
 # RJ8 interface (HPC0 | HPC1)
 #    RJ8_CLK     <-> FMC_HA01_CC_P <-> -
