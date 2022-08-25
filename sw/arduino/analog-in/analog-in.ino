@@ -199,6 +199,7 @@ void setup()
   Wire.setClock(100000);
 
   if (i2c_io_set_register(I2C_IO_CONFIG, I2C_IO_CONFIG_VALUE) != 0) { //Set all ports as output
+    Serial.println("error: i2c_io_set_register");
   }
 
   i2c_o_port_set(I2C_O_PORT_CLK_DIR, 0);
@@ -209,11 +210,11 @@ void setup()
   i2c_set_gain(I2C_GAIN_1);
 
   if (i2c_o_port_update()) {
-    
+    Serial.println("error: i2c_o_port_update");
   }
   i2c_o_port_set(I2C_O_PORT_N_WE, 0);        //Set gain to low for falling flank
   if (i2c_o_port_update()) {
-    
+    Serial.println("error: i2c_o_port_update");
   }
   
   digitalWrite(CONV, 0);
