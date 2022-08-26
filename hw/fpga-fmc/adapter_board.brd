@@ -155,7 +155,7 @@ GOOD</text>
 <wire x1="47.498" y1="2.413" x2="47.498" y2="1.905" width="0.1524" layer="21"/>
 <wire x1="47.498" y1="1.905" x2="49.911" y2="1.905" width="0.1524" layer="21"/>
 <wire x1="49.911" y1="1.905" x2="49.911" y2="2.413" width="0.1524" layer="21"/>
-<text x="1.143" y="37.973" size="1.016" layer="21" rot="R90" align="top-left">DINO FMC
+<text x="2.54" y="38.354" size="1.016" layer="21" rot="R90" align="top-left">DINO FMC Rev. B
 08.2022 Niklas Eiling, Manuel Pitz</text>
 <text x="38.481" y="30.48" size="1.016" layer="21" rot="R180" align="center">RJ2</text>
 </plain>
@@ -5297,28 +5297,25 @@ Your Eurocircuits Team
 <wire x1="33.3375" y1="49.8475" x2="33.401" y2="49.8475" width="0.3048" layer="16"/>
 <wire x1="35.433" y1="47.8155" x2="33.401" y2="49.8475" width="0.3048" layer="16"/>
 <via x="35.433" y="47.752" extent="1-16" drill="0.35"/>
-<via x="1.524" y="5.334" extent="1-16" drill="0.35"/>
-<via x="4.318" y="1.778" extent="1-16" drill="0.35"/>
-<via x="1.397" y="15.24" extent="1-16" drill="0.35"/>
-<via x="1.143" y="21.336" extent="1-16" drill="0.35"/>
-<via x="4.318" y="24.511" extent="1-16" drill="0.35"/>
-<via x="3.048" y="43.815" extent="1-16" drill="0.35"/>
+<via x="1.524" y="2.54" extent="1-16" drill="0.35"/>
+<via x="1.524" y="1.524" extent="1-16" drill="0.35"/>
+<via x="1.524" y="15.24" extent="1-16" drill="0.35"/>
+<via x="1.524" y="20.828" extent="1-16" drill="0.35"/>
+<via x="3.048" y="25.4" extent="1-16" drill="0.35"/>
 <via x="3.048" y="37.973" extent="1-16" drill="0.35"/>
-<via x="3.175" y="57.785" extent="1-16" drill="0.35"/>
-<via x="1.905" y="79.502" extent="1-16" drill="0.35"/>
-<via x="12.7" y="79.883" extent="1-16" drill="0.35"/>
-<via x="20.574" y="78.486" extent="1-16" drill="0.35"/>
-<via x="33.655" y="78.232" extent="1-16" drill="0.35"/>
-<via x="44.958" y="78.232" extent="1-16" drill="0.35"/>
-<via x="57.15" y="81.661" extent="1-16" drill="0.35"/>
-<via x="66.421" y="74.676" extent="1-16" drill="0.35"/>
-<via x="68.326" y="34.417" extent="1-16" drill="0.35"/>
-<via x="66.675" y="35.433" extent="1-16" drill="0.35"/>
-<via x="67.945" y="52.578" extent="1-16" drill="0.35"/>
-<via x="66.548" y="66.167" extent="1-16" drill="0.35"/>
-<via x="66.929" y="9.779" extent="1-16" drill="0.35"/>
-<via x="66.929" y="24.765" extent="1-16" drill="0.35"/>
-<via x="67.183" y="2.54" extent="1-16" drill="0.35"/>
+<via x="3.048" y="50.8" extent="1-16" drill="0.35"/>
+<via x="1.524" y="78.105" extent="1-16" drill="0.35"/>
+<via x="12.7" y="78.105" extent="1-16" drill="0.35"/>
+<via x="20.574" y="78.105" extent="1-16" drill="0.35"/>
+<via x="33.655" y="78.105" extent="1-16" drill="0.35"/>
+<via x="44.958" y="78.105" extent="1-16" drill="0.35"/>
+<via x="57.15" y="78.105" extent="1-16" drill="0.35"/>
+<via x="67.564" y="78.105" extent="1-16" drill="0.35"/>
+<via x="67.564" y="35.56" extent="1-16" drill="0.35"/>
+<via x="67.564" y="50.8" extent="1-16" drill="0.35"/>
+<via x="67.564" y="66.04" extent="1-16" drill="0.35"/>
+<via x="67.564" y="26.924" extent="1-16" drill="0.35"/>
+<via x="67.564" y="1.524" extent="1-16" drill="0.35"/>
 <via x="58.674" y="3.429" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="RJ5_SDO">
