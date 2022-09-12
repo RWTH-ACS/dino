@@ -21,7 +21,9 @@ this documentation.
 # dino - analog out
 
 
-### ADC Module - LTC2642-16bit
+### DAC Module - LTC2642-16bit
+
+### Isolator: ADUM210N
 
 ## Module Interface
 
