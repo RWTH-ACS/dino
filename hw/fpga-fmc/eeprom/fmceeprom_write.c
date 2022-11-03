@@ -29,7 +29,7 @@ int main(int argc, const char *argv[])
 	char *page_msg;
 	int fd_i2c, fd_file;
 
-	if (argc != 2) {
+	if (argc != 3) {
 		fprintf(stderr, "wrong number of args. usage: %s [i2c-bus-id] [filename]\n", argv[0]);
 		return 1;
 	}
