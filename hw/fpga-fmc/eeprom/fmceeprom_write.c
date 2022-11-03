@@ -22,6 +22,7 @@ int main(int argc, const char *argv[])
 {
 	int addr = 0x00;
 	unsigned char *buf;
+    char i2c_bus_dev[32] = {0};
 	struct stat filestat;
 	size_t rw_cnt = 0;
 	size_t rw_ret = 0;
@@ -29,11 +30,11 @@ int main(int argc, const char *argv[])
 	int fd_i2c, fd_file;
 
 	if (argc != 2) {
-		fprintf(stderr, "wrong number of args. usage: %s [filename]\n", argv[0]);
+		fprintf(stderr, "wrong number of args. usage: %s [i2c-bus-id] [filename]\n", argv[0]);
 		return 1;
 	}
 
-	if (stat(argv[1], &filestat) != 0) {
+	if (stat(argv[2], &filestat) != 0) {
 		fprintf(stderr, "cannot stat %s\n", argv[1]);
 		return 1;
 	}
@@ -43,14 +44,19 @@ int main(int argc, const char *argv[])
 		return 1;
 	}
 
-	printf("writing file %s (size: %ld) to eeprom connect to %s at %x\n", argv[1], filestat.st_size, I2C_BUS_DEV, I2C_ADDRESS);
+	printf("writing file %s (size: %ld) to eeprom connect to %s at %x\n", argv[2], filestat.st_size, I2C_BUS_DEV, I2C_ADDRESS);
 
-	if ((fd_i2c = open(I2C_BUS_DEV, O_RDWR)) < 0) {
-		fprintf(stderr, "failed to open %s\n", I2C_BUS_DEV);
+    if (sprintf(i2c_bus_dev, "/dev/i2c-%s", argv[1]) < 0) {
+        fprintf(stderr, "cannot create i2c bus device name\n");
+        return 1;
+    }
+
+	if ((fd_i2c = open(i2c_bus_dev, O_RDWR)) < 0) {
+		fprintf(stderr, "failed to open %s\n", i2c_bus_dev);
 		return 1;
 	}
 
-	if ((fd_file = open(argv[1], O_RDONLY)) < 0) {
+	if ((fd_file = open(argv[2], O_RDONLY)) < 0) {
 		fprintf(stderr, "failed to open %s\n", argv[1]);
 		close(fd_i2c);
 		return 1;
@@ -88,7 +94,7 @@ int main(int argc, const char *argv[])
 			rw_cnt += rw_ret;
 		} else {
 			memset(page_msg+1, 0x00, EEPROM_PAGESIZE);
-		} 
+		}
 	}
 
 	close(fd_file);
