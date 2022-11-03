@@ -398,11 +398,11 @@ def main (argv0, argv):
     try:
         opts, args = getopt.getopt(argv,"v:n:s:p:o:",["--help"])
     except getopt.GetoptError:
-        print "fru-generator: wrong arguments"
+        print("fru-generator: wrong arguments")
         sys.exit(2)
     for opt, arg in opts:
         if opt == "--help":
-            print "fru-generator: no help yet"
+            print("fru-generator: no help yet")
             sys.exit(1)
         if opt == '-v':
             FRU_VENDOR = arg
@@ -416,11 +416,11 @@ def main (argv0, argv):
             FRU_OUTPUT = arg
 
     if verbose:
-        print "VENDOR = " + FRU_VENDOR
-        print "NAME = " + FRU_NAME
-        print "SERIAL = " + FRU_SERIAL
-        print "PART = " + FRU_PART
-        print "OUTPUT = " + FRU_OUTPUT
+        print("VENDOR = " + FRU_VENDOR)
+        print("NAME = " + FRU_NAME)
+        print("SERIAL = " + FRU_SERIAL)
+        print("PART = " + FRU_PART)
+        print("OUTPUT = " + FRU_OUTPUT)
 
     #==================================================
     # Calculate number of minutes since 0:00 1/1/96
