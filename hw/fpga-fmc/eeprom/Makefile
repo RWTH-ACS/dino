@@ -14,8 +14,8 @@ ALL:
 
 install:
 	install -d $(DESTDIR)/bin
-	install ./${BIN} $(DESTDIR)/bin/
-	install ./${FRU_GEN} $(DESTDIR)/bin/
+	install -m 0755 ./${BIN} $(DESTDIR)/bin/
+	install -m 0755 ./${FRU_GEN} $(DESTDIR)/bin/fmc
 
 clean:
 	rm -f ${BIN} *.o
