@@ -81,6 +81,7 @@ architecture Behavioral of dinoif_fast is
     signal state : State_t := INIT;
     signal data : STD_LOGIC_VECTOR (13 downto 0) := (others => '0');
     signal out_ready : STD_LOGIC := '0';
+    signal out_ready_ack : STD_LOGIC := '0'; 
     signal out_conv : STD_LOGIC := '1';
     signal serial_clk_enable : STD_LOGIC := '0';
     signal cnt : integer range 0 to adc_conv_cycles+conv_hold_cycles := 0; -- 1.7us conversion time are 4 cycles@2MHz, 20 cycles@MHz, 40 cycles@20MHz, 30 cycles@15Mhz
@@ -154,14 +155,19 @@ begin
         end if;
     end process;
 
-    process(aclk, out_ready, data) begin
+    process(aclk, out_ready, data, out_ready_ack) begin
         if rising_edge(aclk) then
-            if out_ready = '1' then
+            if out_ready = '1' and out_ready_ack = '0' then
                 M00_AXIS_tdata(13 downto 0) <= data;
                 M00_AXIS_tvalid <= '1';
-            else
+                out_ready_ack <= '1';
+            elsif out_ready = '1' and out_ready_ack = '1' then
                 M00_AXIS_tdata(13 downto 0) <= (others => '0');
                 M00_AXIS_tvalid <= '0';
+            else 
+                M00_AXIS_tdata(13 downto 0) <= (others => '0');
+                M00_AXIS_tvalid <= '0';
+                out_ready_ack <= '0';
             end if;
         end if;
     end process;

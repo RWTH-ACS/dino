@@ -168,3 +168,14 @@ set_property PACKAGE_PIN B11 [get_ports {i2c_scl[0]}]
 set_property IOSTANDARD LVCMOS18 [get_ports {i2c_scl[0]}]
 set_property PACKAGE_PIN A11 [get_ports {i2c_sda[0]}]
 set_property IOSTANDARD LVCMOS18 [get_ports {i2c_sda[0]}]
+
+# 250.0MHz GT Reference clock constraint
+#create_clock -name GT_REFCLK1 -period 4.0	 [get_ports GT_DIFF_REFCLK1_0_clk_p]
+# Reference clock location
+set_property PACKAGE_PIN W9 [get_ports GT_DIFF_REFCLK1_0_clk_n]
+set_property PACKAGE_PIN W10 [get_ports GT_DIFF_REFCLK1_0_clk_p]
+# Transceiver P1
+set_property PACKAGE_PIN AA2 [get_ports {GT_SERIAL_RX_0_rxp[0]}]
+set_property PACKAGE_PIN AA1 [get_ports {GT_SERIAL_RX_0_rxn[0]}]
+set_property PACKAGE_PIN Y4 [get_ports {GT_SERIAL_TX_0_txp[0]}]
+set_property PACKAGE_PIN Y3 [get_ports {GT_SERIAL_TX_0_txn[0]}]
