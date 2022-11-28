@@ -11,17 +11,17 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="4,490.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="10,545.001 ns"></ZoomEndTime>
-      <Cursor1Time time="6,450.000 ns"></Cursor1Time>
+      <ZoomStartTime time="5,954.166 ns"></ZoomStartTime>
+      <ZoomEndTime time="12,009.167 ns"></ZoomEndTime>
+      <Cursor1Time time="7,700.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="240"></NameColumnWidth>
       <ValueColumnWidth column_width="96"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="17" />
+   <WVObjectSize size="21" />
    <wave_markers>
-      <marker label="" time="6250000" />
+      <marker label="" time="7500000" />
    </wave_markers>
    <wvobject type="logic" fp_name="/dinoif_fast_tb/aclk">
       <obj_property name="ElementShortName">aclk</obj_property>
@@ -34,6 +34,14 @@
    <wvobject type="logic" fp_name="/dinoif_fast_tb/clk_20mhz">
       <obj_property name="ElementShortName">clk_20mhz</obj_property>
       <obj_property name="ObjectShortName">clk_20mhz</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/dinoif_fast_tb/dinoif/state">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/dinoif_fast_tb/dinoif/read_state">
+      <obj_property name="ElementShortName">read_state</obj_property>
+      <obj_property name="ObjectShortName">read_state</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/dinoif_fast_tb/begin_conv">
       <obj_property name="ElementShortName">begin_conv</obj_property>
@@ -104,5 +112,13 @@
    <wvobject type="logic" fp_name="/dinoif_fast_tb/M00_AXIS_tlast">
       <obj_property name="ElementShortName">M00_AXIS_tlast</obj_property>
       <obj_property name="ObjectShortName">M00_AXIS_tlast</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dinoif_fast_tb/active">
+      <obj_property name="ElementShortName">active</obj_property>
+      <obj_property name="ObjectShortName">active</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/dinoif_fast_tb/rtt_cycles">
+      <obj_property name="ElementShortName">rtt_cycles</obj_property>
+      <obj_property name="ObjectShortName">rtt_cycles</obj_property>
    </wvobject>
 </wave_config>

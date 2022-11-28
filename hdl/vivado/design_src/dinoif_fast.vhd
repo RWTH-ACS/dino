@@ -41,8 +41,10 @@ entity dinoif_fast is
            conv : out STD_LOGIC;
            serial_clk : out STD_LOGIC;
            M00_AXIS_tdata : out STD_LOGIC_VECTOR (15 downto 0);
-           M00_AXIS_tvalid: out STD_LOGIC;
-           M00_AXIS_tlast: out STD_LOGIC
+           M00_AXIS_tvalid : out STD_LOGIC;
+           M00_AXIS_tlast : out STD_LOGIC;
+           active : out STD_LOGIC;
+           rtt_cycles : out integer
            );
            
 end dinoif_fast;
@@ -69,87 +71,102 @@ architecture Behavioral of dinoif_fast is
     constant serial_frequ : integer := 20_000_000;
     constant serial_rate : time := 1 sec / serial_frequ;
     
-    --constant conv_hold_time : time := 120 ns;
-    --constant adc_conv_delay : time := 1.3 us;
-    
-    constant conv_hold_time : time := 120 ns;
-    constant adc_conv_delay : time := 1.3 us;
-    constant conv_hold_cycles : integer := conv_hold_time / serial_rate;
-    constant adc_conv_cycles : integer := adc_conv_delay / serial_rate;
+    constant adc_convmin : time := 1.3 us;
+    constant adc_convmin_cycles : integer := adc_convmin / serial_rate;
+    constant adc_bits : integer := 14;
 
-    type State_t is (INIT, CONVERT, WAKEUP, READ, OUTPUT);
-    signal state : State_t := INIT;
-    signal data : STD_LOGIC_VECTOR (13 downto 0) := (others => '0');
+    type State_t is (IDLE, CONVERT, AQUIRE);
+    type ReadState_t is (IDLE, RDY, READ);
+    signal state : State_t := IDLE;
+    signal read_state : ReadState_t := IDLE;
+    signal data : STD_LOGIC_VECTOR (adc_bits-1 downto 0) := (others => '0');
     signal out_ready : STD_LOGIC := '0';
     signal out_ready_ack : STD_LOGIC := '0'; 
     signal out_conv : STD_LOGIC := '1';
     signal serial_clk_enable : STD_LOGIC := '0';
-    signal cnt : integer range 0 to adc_conv_cycles+conv_hold_cycles := 0; -- 1.7us conversion time are 4 cycles@2MHz, 20 cycles@MHz, 40 cycles@20MHz, 30 cycles@15Mhz
+    signal cnt : integer range 0 to adc_convmin_cycles := 0; -- 1.7us conversion time are 4 cycles@2MHz, 20 cycles@MHz, 40 cycles@20MHz, 30 cycles@15Mhz
+    signal read_cnt : integer range 0 to 1024 := 0;
+    signal out_active : STD_LOGIC := '0';
+    signal out_rtt_cycles : integer range 0 to 1024 := 0;
+    
+    
 begin
     process (clk_20mhz, state, resetn, begin_conv, cnt, serial_data) begin
         if rising_edge(clk_20mhz) then
             if resetn='0' then
-                state <= INIT;
+                state <= IDLE;
+                read_state <= IDLE;
+                data <= (others => '0');
+                out_ready <= '0';
             else
                 cnt <= cnt + 1;
+                read_cnt <= read_cnt + 1;
                 case state is
-                    when INIT =>
-                        data <= (others => '0');
-                        out_ready <= '0';
-                        out_conv <= '1';
-                        serial_clk_enable <= '0';
-                        if begin_conv = '1' then
-                            state <= CONVERT;
-                        else
-                            state <= INIT;
-                        end if;
-                        cnt <= 0;
-                    when CONVERT =>
-                        data <= (others => '0');
-                        out_ready <= '0';
-                        out_conv <= '0';
-                        if cnt=conv_hold_cycles then
-                            serial_clk_enable <= '1';
-                        else
-                            serial_clk_enable <= '0';
-                        end if;
-                        if cnt=adc_conv_cycles+conv_hold_cycles  then
-                            state <= WAKEUP;
-                            cnt <= 0;
-                        else
-                            state <= CONVERT;
-                        end if;
-                    when WAKEUP =>
-                        data <= (others => '0');
-                        out_ready <= '0';
+                when IDLE =>
+                    out_conv <= '0';
+                    serial_clk_enable <= '0';
+                    if begin_conv = '1' then
+                        state <= CONVERT;
+                    else
+                        state <= IDLE;
+                    end if;
+                    cnt <= 0;
+                when CONVERT =>
+                    out_conv <= '1';
+                    if cnt=0 then
                         serial_clk_enable <= '1';
-                        out_conv <= '0';
-                        if cnt = 1 then
-                            state <= READ;
-                            cnt <= 0;
+                    else
+                        serial_clk_enable <= '0';
+                    end if;
+                    if cnt=adc_convmin_cycles then
+                        state <= AQUIRE;
+                        cnt <= 0;
+                    else
+                        state <= CONVERT;
+                    end if;
+                when AQUIRE =>
+                    serial_clk_enable <= '1';
+                    out_conv <= '0';
+                    if cnt = adc_bits then
+                        state <= IDLE;
+                        cnt <= 0;
+                    else
+                        state <= AQUIRE;
+                    end if;                  
+                end case;
+                case read_state is
+                    when IDLE =>
+                        read_cnt <= 0;
+                        if state = AQUIRE then
+                            read_state <= RDY;
                         else
-                            state <= WAKEUP;
+                            read_state <= IDLE;
+                        end if;
+                    when RDY =>
+                        out_ready <= '0';
+                        data <= (others => '0');
+                        if serial_data = '0' then
+                            read_state <= READ;
+                            read_cnt <= 0;
+                            out_active <= '1';
+                            out_rtt_cycles <= read_cnt+1;
+                        elsif state = CONVERT then
+                            -- timeout
+                            out_active <= '0';
+                            out_rtt_cycles <= 0;
+                            read_state <= IDLE;
+                        else
+                            read_state <= RDY;
                         end if;
                     when READ =>
-                        data <= data(12 downto 0) & serial_data;
-                        out_ready <= '0';
-                        out_conv <= '0';
-                        if cnt=14 then
-                            serial_clk_enable <= '0';
-                            state <= OUTPUT;
-                            cnt <= 0;
+                        data <= data(adc_bits-2 downto 0) & serial_data;                 
+                        if read_cnt = adc_bits-1 then
+                            read_state <= IDLE;
+                            out_ready <= '1';
                         else
-                            serial_clk_enable <= '1';
-                            state <= READ;
+                            read_state <= READ;
+                            out_ready <= '0';
                         end if;
-                    when OUTPUT =>
-                        data <= data;
-                        out_ready <= '1';
-                        out_conv <= '1';
-                        serial_clk_enable <= '1';
-                        state <= INIT;
-                        cnt <= 0;
-
                 end case;
             end if;
         end if;
@@ -158,14 +175,14 @@ begin
     process(aclk, out_ready, data, out_ready_ack) begin
         if rising_edge(aclk) then
             if out_ready = '1' and out_ready_ack = '0' then
-                M00_AXIS_tdata(13 downto 0) <= data;
+                M00_AXIS_tdata(adc_bits-1 downto 0) <= data;
                 M00_AXIS_tvalid <= '1';
                 out_ready_ack <= '1';
             elsif out_ready = '1' and out_ready_ack = '1' then
-                M00_AXIS_tdata(13 downto 0) <= (others => '0');
+                M00_AXIS_tdata(adc_bits-1 downto 0) <= (others => '0');
                 M00_AXIS_tvalid <= '0';
             else 
-                M00_AXIS_tdata(13 downto 0) <= (others => '0');
+                M00_AXIS_tdata(adc_bits-1 downto 0) <= (others => '0');
                 M00_AXIS_tvalid <= '0';
                 out_ready_ack <= '0';
             end if;
@@ -183,8 +200,10 @@ begin
 
 
     conv <= out_conv;
+    active <= out_active;
+    rtt_cycles <= out_rtt_cycles;
 
-    M00_AXIS_tdata(15 downto 14) <= (others => '0');
+    M00_AXIS_tdata(15 downto adc_bits) <= (others => '0');
     M00_AXIS_tlast <= '1';
     --S00_AXIS_tready <= '1';
 

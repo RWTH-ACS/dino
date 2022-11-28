@@ -46,7 +46,9 @@ component dinoif_fast is
            serial_clk : out STD_LOGIC;
            M00_AXIS_tdata : out STD_LOGIC_VECTOR (15 downto 0);
            M00_AXIS_tvalid: out STD_LOGIC;
-           M00_AXIS_tlast: out STD_LOGIC
+           M00_AXIS_tlast: out STD_LOGIC;
+           active : out STD_LOGIC;
+           rtt_cycles : out integer
            );
     end component;
     component config_timer is
@@ -74,6 +76,8 @@ component dinoif_fast is
     signal M00_AXIS_tdata : STD_LOGIC_VECTOR (15 downto 0);
     signal M00_AXIS_tvalid : STD_LOGIC;
     signal M00_AXIS_tlast : STD_LOGIC;
+    signal active : STD_LOGIC;
+    signal rtt_cycles : integer;
     
     constant aclk_frequ : natural := 50_000_000;
     constant aclk_period : time := ( 1 sec ) / aclk_frequ;
@@ -96,7 +100,9 @@ begin
            serial_clk => fpga_serial_clk,
            M00_AXIS_tdata => M00_AXIS_tdata,
            M00_AXIS_tvalid => M00_AXIS_tvalid,
-           M00_AXIS_tlast => M00_AXIS_tlast);
+           M00_AXIS_tlast => M00_AXIS_tlast,
+           active => active,
+           rtt_cycles => rtt_cycles);
     timer : config_timer port map ( 
            clk => clk_20mhz,
            resetn => resetn,
