@@ -48,7 +48,7 @@ component dinoif_fast is
            M00_AXIS_tvalid: out STD_LOGIC;
            M00_AXIS_tlast: out STD_LOGIC;
            active : out STD_LOGIC;
-           rtt_cycles : out integer
+           rtt_cycles : out STD_LOGIC_VECTOR(15 downto 0)
            );
     end component;
     component config_timer is
@@ -77,7 +77,7 @@ component dinoif_fast is
     signal M00_AXIS_tvalid : STD_LOGIC;
     signal M00_AXIS_tlast : STD_LOGIC;
     signal active : STD_LOGIC;
-    signal rtt_cycles : integer;
+    signal rtt_cycles : STD_LOGIC_VECTOR(15 downto 0);
     
     constant aclk_frequ : natural := 50_000_000;
     constant aclk_period : time := ( 1 sec ) / aclk_frequ;

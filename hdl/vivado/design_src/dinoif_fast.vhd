@@ -24,7 +24,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -44,7 +44,7 @@ entity dinoif_fast is
            M00_AXIS_tvalid : out STD_LOGIC;
            M00_AXIS_tlast : out STD_LOGIC;
            active : out STD_LOGIC;
-           rtt_cycles : out integer
+           rtt_cycles : out STD_LOGIC_VECTOR(15 downto 0)
            );
            
 end dinoif_fast;
@@ -201,7 +201,7 @@ begin
 
     conv <= out_conv;
     active <= out_active;
-    rtt_cycles <= out_rtt_cycles;
+    rtt_cycles <= std_logic_vector(to_unsigned(out_rtt_cycles,16));
 
     M00_AXIS_tdata(15 downto adc_bits) <= (others => '0');
     M00_AXIS_tlast <= '1';
