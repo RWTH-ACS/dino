@@ -47,34 +47,56 @@ end append_seqnum;
 architecture Behavioral of append_seqnum is
     -- natural has size of 31 bits unsigned
     signal cnt : natural := 0;
-    type State_t is (FORWARD, APPEND);
+    type State_t is (FORWARD, FILL, APPEND);
     signal state : State_t := FORWARD;
+    constant fill_to_message_size : natural := 32;
+    signal fill_cnt : natural := 0;
 begin
     
     process(clk, aresetn, S00_AXIS_tdata, S00_AXIS_tvalid, S00_AXIS_tlast, cnt, state) begin
         if rising_edge(clk) then
             if aresetn = '0' then
                 cnt <= 0;
+                fill_cnt <= 0;
                 M00_AXIS_tdata <= (others => '0');
                 M00_AXIS_tvalid <= '0';
                 M00_AXIS_tlast <= '0';
+                state <= FORWARD;
             else
                 case state is
                     when FORWARD =>
                         M00_AXIS_tdata <= S00_AXIS_tdata;
                         M00_AXIS_tvalid <= S00_AXIS_tvalid;
                         M00_AXIS_tlast <= '0';
-                        if (S00_AXIS_tlast = '1') then
-                            state <= APPEND;
+                        if (S00_AXIS_tvalid = '1') then
+                            fill_cnt <= fill_cnt + 1;
+                        end if;
+                        if (S00_AXIS_tlast = '1' and S00_AXIS_tvalid = '1') then
+                            if (fill_to_message_size <= 1+fill_cnt) then
+                                state <= APPEND;
+                            else
+                                state <= FILL;
+                            end if;
                         else
                             state <= FORWARD;
                         end if;
+                    when FILL =>
+                        M00_AXIS_tdata <= (others => '0');
+                        M00_AXIS_tvalid <= '1';
+                        M00_AXIS_tlast <= '0';
+                        fill_cnt <= fill_cnt + 1;
+                        if (fill_cnt = fill_to_message_size - 2) then
+                            state <= APPEND;
+                        else
+                            state <= FILL;
+                        end if;                        
                     when APPEND =>
                         M00_AXIS_tdata <= std_logic_vector(to_unsigned(cnt, 32));
                         M00_AXIS_tvalid <= '1';
                         M00_AXIS_tlast <= '1';
                         cnt <= cnt + 1;
                         state <= FORWARD;
+                        fill_cnt <= 0;
                 end case;
             end if;
         end if;

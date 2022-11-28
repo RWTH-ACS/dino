@@ -6,7 +6,8 @@
       "name": "bd_main",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2021.1"
+      "tool_version": "2021.1",
+      "validated": "true"
     },
     "design_tree": {
       "config_timer_1": "",
@@ -56,6 +57,10 @@
         "vlnv_bus_definition": "xilinx.com:interface:diff_clock:1.0",
         "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0",
         "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
           "FREQ_HZ": {
             "value": "300000000"
           }
@@ -71,6 +76,10 @@
         "vlnv_bus_definition": "xilinx.com:interface:diff_clock:1.0",
         "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0",
         "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
           "FREQ_HZ": {
             "value": "250000000"
           }
@@ -93,14 +102,52 @@
         "type": "clk",
         "direction": "O",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "bd_main_dinoif_fast_0_1_serial_clk",
+            "value_src": "default_prop"
+          },
           "FREQ_HZ": {
             "value": "20000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
           }
         }
       },
       "serial_clk_2": {
         "type": "clk",
-        "direction": "O"
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "bd_main_dinoif_fast_0_0_serial_clk",
+            "value_src": "default_prop"
+          },
+          "FREQ_HZ": {
+            "value": "20000000",
+            "value_src": "const_prop"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
       },
       "serial_clk_de": {
         "direction": "O",
@@ -134,8 +181,24 @@
         "type": "clk",
         "direction": "O",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "bd_main_dinoif_fast_2_0_serial_clk",
+            "value_src": "default_prop"
+          },
           "FREQ_HZ": {
             "value": "20000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
           }
         }
       },
@@ -146,8 +209,24 @@
         "type": "clk",
         "direction": "O",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "bd_main_dinoif_fast_3_1_serial_clk",
+            "value_src": "default_prop"
+          },
           "FREQ_HZ": {
             "value": "20000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
           }
         }
       },
@@ -158,8 +237,24 @@
         "type": "clk",
         "direction": "O",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "bd_main_dinoif_fast_3_2_serial_clk",
+            "value_src": "default_prop"
+          },
           "FREQ_HZ": {
             "value": "20000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
           }
         }
       },
@@ -182,6 +277,10 @@
         "type": "rst",
         "direction": "I",
         "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
           "POLARITY": {
             "value": "ACTIVE_HIGH"
           }
@@ -194,8 +293,24 @@
         "type": "clk",
         "direction": "O",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "bd_main_dinoif_fast_3_3_serial_clk",
+            "value_src": "default_prop"
+          },
           "FREQ_HZ": {
             "value": "20000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
           }
         }
       },
@@ -206,8 +321,24 @@
         "type": "clk",
         "direction": "O",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "bd_main_dinoif_fast_6_0_serial_clk",
+            "value_src": "default_prop"
+          },
           "FREQ_HZ": {
             "value": "20000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
           }
         }
       },
@@ -218,8 +349,24 @@
         "type": "clk",
         "direction": "O",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "bd_main_dinoif_fast_6_1_serial_clk",
+            "value_src": "default_prop"
+          },
           "FREQ_HZ": {
             "value": "20000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
           }
         }
       },
@@ -294,7 +441,7 @@
         "inst_hier_path": "xlconstant_1",
         "parameters": {
           "CONST_VAL": {
-            "value": "100"
+            "value": "1000"
           },
           "CONST_WIDTH": {
             "value": "32"
@@ -3408,6 +3555,18 @@
               "HAS_TLAST": {
                 "value": "1",
                 "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "bd_main_clk_wiz_0_0_clk_20mhz",
+                "value_src": "ip_prop"
               }
             },
             "port_maps": {
@@ -3463,6 +3622,18 @@
               "HAS_TLAST": {
                 "value": "1",
                 "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "bd_main_clk_wiz_0_0_clk_20mhz",
+                "value_src": "ip_prop"
               }
             },
             "port_maps": {
@@ -3495,6 +3666,18 @@
               "ASSOCIATED_RESET": {
                 "value": "aresetn",
                 "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "bd_main_clk_wiz_0_0_clk_20mhz",
+                "value_src": "ip_prop"
               }
             }
           },
@@ -3522,12 +3705,6 @@
         "interface_ports": [
           "GT_SERIAL_RX_0",
           "aurora/GT_SERIAL_RX_0"
-        ]
-      },
-      "append_seqnum_0_M00_AXIS": {
-        "interface_ports": [
-          "append_seqnum_0/M00_AXIS",
-          "aurora/USER_DATA_S_AXI_TX"
         ]
       },
       "aurora_8b10b_0_CORE_STATUS": {
@@ -3594,7 +3771,7 @@
       "scale_offset_M_AXIS_RESULT": {
         "interface_ports": [
           "scale_offset/M_AXIS_RESULT",
-          "append_seqnum_0/S00_AXIS"
+          "aurora/USER_DATA_S_AXI_TX"
         ]
       },
       "user_si570_sysclk_1": {
