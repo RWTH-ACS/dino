@@ -21749,6 +21749,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <text x="279.4" y="223.52" size="1.778" layer="91">200kHz = 2.2k + 360p</text>
 <text x="279.4" y="228.6" size="1.778" layer="91">220kHz = 2.2k + 330p</text>
 <text x="116.84" y="271.78" size="1.778" layer="91">100mA, 250V</text>
+<text x="508" y="289.56" size="1.778" layer="88">WRONG FOOTPRINT L1</text>
 </plain>
 <instances>
 <instance part="POWER" gate="G$1" x="518.16" y="340.36" smashed="yes">
