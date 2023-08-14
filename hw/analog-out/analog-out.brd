@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="5" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -4762,6 +4762,34 @@ Your Eurocircuits Team
 <wire x1="56.33735625" y1="3.683" x2="55.5141" y2="4.50625625" width="0.508" layer="1"/>
 <wire x1="55.499" y1="5.318" x2="55.5141" y2="5.3029" width="0.508" layer="1"/>
 <wire x1="55.499" y1="5.318" x2="55.5545" y2="5.2625" width="0.508" layer="1"/>
+<polygon width="0.1524" layer="1">
+<vertex x="-1.27" y="39.878"/>
+<vertex x="57.404" y="39.878"/>
+<vertex x="57.658" y="39.624"/>
+<vertex x="57.658" y="-0.889"/>
+<vertex x="55.753" y="-2.794"/>
+<vertex x="1.016" y="-2.794"/>
+<vertex x="-1.524" y="-0.254"/>
+<vertex x="-1.524" y="39.624"/>
+</polygon>
+<polygon width="0.1524" layer="16">
+<vertex x="1.778" y="41.402"/>
+<vertex x="3.429" y="39.751"/>
+<vertex x="50.927" y="39.751"/>
+<vertex x="57.023" y="39.751"/>
+<vertex x="57.404" y="39.37"/>
+<vertex x="57.531" y="39.243"/>
+<vertex x="57.658" y="39.116"/>
+<vertex x="57.658" y="-1.27"/>
+<vertex x="57.15" y="-1.778"/>
+<vertex x="-4.953" y="-1.778"/>
+<vertex x="-6.223" y="-0.508"/>
+<vertex x="-6.223" y="33.401"/>
+</polygon>
+<via x="13.081" y="25.908" extent="1-16" drill="0.35"/>
+<via x="20.447" y="22.479" extent="1-16" drill="0.35"/>
+<via x="8.382" y="23.749" extent="1-16" drill="0.35"/>
+<via x="12.446" y="19.177" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="CLK-">
 <contactref element="R9" pad="1"/>
