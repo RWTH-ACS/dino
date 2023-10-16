@@ -4029,7 +4029,7 @@ Your Eurocircuits Team
 <attribute name="VALUE" x="58.5978" y="34.036" size="0.762" layer="100" ratio="6" rot="SR0"/>
 <attribute name="VENDOR" value="Traco Power" x="16.764" y="61.722" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="I2C" library="ADUM1251WARZ" package="R_8_ADI" value="ADUM1250" x="62.484" y="18.669" smashed="yes">
+<element name="I2C" library="ADUM1251WARZ" package="R_8_ADI" value="SI8400AB-B-IS" x="62.484" y="18.669" smashed="yes">
 <attribute name="BUILT_BY" value="EMA_UL_Team" x="113.284" y="-25.781" size="1.778" layer="27" display="off"/>
 <attribute name="COPYRIGHT" value="Copyright (C) 2018 Accelerated Designs. All rights reserved" x="113.284" y="-25.781" size="1.778" layer="27" display="off"/>
 <attribute name="DIGIKEY" value="ADUM1251ARZ-RL7TR-ND" x="62.484" y="18.669" size="1.778" layer="27" display="off"/>

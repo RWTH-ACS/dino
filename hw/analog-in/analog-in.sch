@@ -21181,7 +21181,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </spice>
 <attribute name="DIGIKEY" value="478-7962-1-ND"/>
 </part>
-<part name="I2C" library="ADUM1251WARZ" deviceset="ADUM1251WARZ" device="" value="ADUM1250">
+<part name="I2C" library="ADUM1251WARZ" deviceset="ADUM1251WARZ" device="" value="SI8400AB-B-IS">
 <attribute name="DIGIKEY" value="ADUM1251ARZ-RL7TR-ND"/>
 </part>
 <part name="SERIAL_CLOCK" library="ADM2486" deviceset="ADM2486BRWZ-REEL" device="" value="ADM2486BRWZ">
