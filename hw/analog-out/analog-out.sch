@@ -21643,7 +21643,7 @@ precision wire wound</description>
 <attribute name="DIGIKEY" value="478-7962-1-ND"/>
 </part>
 <part name="I2C" library="ADUM1251WARZ" deviceset="ADUM1251WARZ" device="" value="SI8400AB-B-IS">
-<attribute name="DIGIKEY" value="ADUM1251ARZ-RL7TR-ND"/>
+<attribute name="MOUSER" value="634-SI8400AB-B-IS"/>
 </part>
 <part name="SERIAL_CLOCK" library="ADM2486" deviceset="ADM2486BRWZ-REEL" device="" value="ADM2486BRWZ">
 <attribute name="DIGIKEY" value="ADM2486BRWZ-REELTR-ND"/>
@@ -22133,6 +22133,7 @@ precision wire wound</description>
 <text x="358.14" y="-20.32" size="1.778" layer="91">AIN is protected we hav 100 Ohm for limiting</text>
 <text x="320.04" y="208.28" size="1.778" layer="91">+-2.5V</text>
 <text x="365.76" y="299.72" size="1.778" layer="91">switched to 757-TCR2EF33LMCT </text>
+<text x="81.28" y="119.38" size="1.778" layer="91">Place 2.5V Ref</text>
 </plain>
 <instances>
 <instance part="POWER" gate="G$1" x="518.16" y="340.36" smashed="yes">
@@ -22190,7 +22191,7 @@ precision wire wound</description>
 <instance part="I2C" gate="A" x="444.5" y="106.68" smashed="yes" rot="MR180">
 <attribute name="NAME" x="432.1556" y="100.1014" size="2.0828" layer="95" ratio="6" rot="SMR180"/>
 <attribute name="VALUE" x="431.5206" y="115.3414" size="2.0828" layer="96" ratio="6" rot="SMR180"/>
-<attribute name="DIGIKEY" x="444.5" y="106.68" size="1.778" layer="96" rot="MR180" display="off"/>
+<attribute name="MOUSER" x="444.5" y="106.68" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
 <instance part="I2C" gate="G$1" x="419.1" y="370.84" smashed="yes">
 <attribute name="NAME" x="414.3756" y="379.9586" size="2.0828" layer="95" ratio="6" rot="SR0"/>

@@ -3748,8 +3748,8 @@ Your Eurocircuits Team
 <element name="I2C" library="ADUM1251WARZ" package="R_8_ADI" value="SI8400AB-B-IS" x="62.484" y="18.669" smashed="yes">
 <attribute name="BUILT_BY" value="EMA_UL_Team" x="113.284" y="-25.781" size="1.778" layer="27" display="off"/>
 <attribute name="COPYRIGHT" value="Copyright (C) 2018 Accelerated Designs. All rights reserved" x="113.284" y="-25.781" size="1.778" layer="27" display="off"/>
-<attribute name="DIGIKEY" value="ADUM1251ARZ-RL7TR-ND" x="62.484" y="18.669" size="1.778" layer="27" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="ADUM1251WARZ" x="113.284" y="-25.781" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER" value="634-SI8400AB-B-IS" x="62.484" y="18.669" size="1.778" layer="27" display="off"/>
 <attribute name="SOURCELIBRARY" value="Analog_2019-03-08" x="113.284" y="-25.781" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="65.3542" y="22.86" size="0.762" layer="100" ratio="6" rot="SR180"/>
 <attribute name="VENDOR" value="Analog Devices Inc" x="113.284" y="-25.781" size="1.778" layer="27" display="off"/>
