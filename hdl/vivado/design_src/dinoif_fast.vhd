@@ -73,7 +73,7 @@ architecture Behavioral of dinoif_fast is
     
     constant adc_convmin : time := 1.3 us;
     constant adc_convmin_cycles : integer := adc_convmin / serial_rate;
-    constant adc_bits : integer := 14;
+    constant adc_bits : integer := 16;
 
     type State_t is (IDLE, CONVERT, AQUIRE);
     type ReadState_t is (IDLE, RDY, READ);
@@ -159,8 +159,10 @@ begin
                             read_state <= RDY;
                         end if;
                     when READ =>
-                        data <= data(adc_bits-2 downto 0) & serial_data;                 
-                        if read_cnt = adc_bits-1 then
+                        data <= data(adc_bits-2 downto 0) & serial_data;
+                        -- number of actual bits send. 
+                        -- should be bits-1 but the low phase before the acutal adc data arrives is two cycles so use bits to compensate                
+                        if read_cnt = 14 then
                             read_state <= IDLE;
                             out_ready <= '1';
                         else
