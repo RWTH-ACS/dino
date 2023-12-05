@@ -4,6 +4,9 @@ const std = @import("std");
 // declaratively construct a build graph that will be executed by an external
 // runner.
 pub fn build(b: *std.Build) void {
+    var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
+    defer arena.deinit();
+    var a = arena.allocator();
     // Standard target options allows the person running `zig build` to choose
     // what target to build for. Here we do not override the defaults, which
     // means any target is allowed, and the default is native. Other options
@@ -14,6 +17,23 @@ pub fn build(b: *std.Build) void {
     // between Debug, ReleaseSafe, ReleaseFast, and ReleaseSmall. Here we do not
     // set a preferred release mode, allowing the user to decide how to optimize.
     const optimize = b.standardOptimizeOption(.{});
+
+    const triple = target.linuxTriple(a) catch {
+        std.debug.print("unable to determine linux triple", .{});
+        return;
+    };
+    const make_cc_str = std.fmt.allocPrint(a, "zig cc -target {s}", .{triple}) catch {
+        std.debug.print("unable to allocate string", .{});
+        return;
+    };
+    const make = b.addSystemCommand(&.{"make"});
+    const make_args = [_][]const u8{"lib/libi2c.a", "-C", "i2c-tools"};
+    make.addArgs(&make_args);
+    make.setEnvironmentVariable("CC", make_cc_str);
+
+    const make_step = b.step("make", "Build i2c-tools");
+    make_step.dependOn(&make.step);
+    b.getInstallStep().dependOn(make_step);
 
     const exe = b.addExecutable(.{
         .name = "dino-config",
@@ -27,7 +47,6 @@ pub fn build(b: *std.Build) void {
     exe.addObjectFile(std.build.LazyPath{ .path = "i2c-tools/lib/libi2c.a" });
     exe.addIncludePath(std.build.LazyPath{ .path = "i2c-tools/include" });
     exe.addIncludePath(std.build.LazyPath{ .path = "i2c-tools/tools" });
-
     // This declares intent for the executable to be installed into the
     // standard location when the user invokes the "install" step (the default
     // step when running `zig build`).
