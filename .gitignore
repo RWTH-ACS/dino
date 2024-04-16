@@ -1,6 +1,8 @@
 *.b#[0-9]*
 *.s#[0-9]*
 *.l#[0-9]*
+*.b##
+*.s##
 
 #KiCad
 # For PCBs designed using KiCad: https://www.kicad.org/
@@ -33,3 +35,5 @@ fp-info-cache
 *.xml
 *.csv
 
+# Lockfile
+*.lck
