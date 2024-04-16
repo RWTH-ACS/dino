@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 0)
+  (lib (name "analog-out-eagle-import")(type "KiCad")(uri "${KIPRJMOD}/analog-out-eagle-import.kicad_sym")(options "")(descr ""))
+)

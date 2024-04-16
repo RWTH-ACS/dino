@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "analog-in")(type "KiCad")(uri "$(KIPRJMOD)/analog-in.pretty")(options "")(descr ""))
+)

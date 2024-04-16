@@ -1,0 +1,38 @@
+(footprint "C1808" (version 20221018) (generator pcbnew)
+  (layer "F.Cu")
+  (descr "<b>CAPACITOR</b><p>\nSource: AVX .. aphvc.pdf")
+  (fp_text reference "REF**" (at -2.233 -1.827) (layer "F.SilkS")
+      (effects (font (size 1.1684 1.1684) (thickness 0.1016)) (justify left bottom))
+    (tstamp 3069ed55-517f-4c12-8f04-ea3995fa37e9)
+  )
+  (fp_text value "C1808" (at -2.233 2.842) (layer "F.Fab")
+      (effects (font (size 1.1684 1.1684) (thickness 0.1016)) (justify left bottom))
+    (tstamp a78fc7e0-b7ef-4b07-90f9-e912219848b9)
+  )
+  (fp_line (start -1.4732 -0.9502) (end 1.4732 -0.9502)
+    (stroke (width 0.1016) (type solid)) (layer "F.Fab") (tstamp ed32f323-32cf-4dc9-82cc-0acb2719b192))
+  (fp_line (start -1.4478 0.9502) (end 1.4732 0.9502)
+    (stroke (width 0.1016) (type solid)) (layer "F.Fab") (tstamp 7aff1eea-e129-4a51-82be-0fa8ce849843))
+  (fp_poly
+    (pts
+      (xy -2.275 1.015)
+      (xy -1.225 1.015)
+      (xy -1.225 -1.015)
+      (xy -2.275 -1.015)
+    )
+
+    (stroke (width 0) (type default)) (fill solid) (layer "F.Fab") (tstamp 4cac387e-eec6-4563-89ba-b9df2984e202))
+  (fp_poly
+    (pts
+      (xy 1.225 1.015)
+      (xy 2.275 1.015)
+      (xy 2.275 -1.015)
+      (xy 1.225 -1.015)
+    )
+
+    (stroke (width 0) (type default)) (fill solid) (layer "F.Fab") (tstamp ca8036fe-8031-4e84-98f3-ffa4d6561d57))
+  (pad "1" smd rect (at -1.95 0) (size 1.6 2.2) (layers "F.Cu" "F.Paste" "F.Mask")
+    (thermal_bridge_angle 0) (tstamp d95d07da-1f73-4ea3-9755-c59b0cc1ffdd))
+  (pad "2" smd rect (at 1.95 0) (size 1.6 2.2) (layers "F.Cu" "F.Paste" "F.Mask")
+    (thermal_bridge_angle 0) (tstamp fed5ea31-f3bf-46b4-a73d-edf7d399a7f7))
+)

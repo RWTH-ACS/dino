@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "analog-out")(type "KiCad")(uri "$(KIPRJMOD)/analog-out.pretty")(options "")(descr ""))
+)
