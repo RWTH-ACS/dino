@@ -35,23 +35,32 @@ use IEEE.NUMERIC_STD.ALL;
 entity config_timer is
     Port ( clk : in STD_LOGIC;
            resetn : in STD_LOGIC;
+           cmp_val_clk : in STD_LOGIC;
            cmp_val : in STD_LOGIC_VECTOR (31 downto 0);
            thresh : out STD_LOGIC);
 end config_timer;
 
 architecture Behavioral of config_timer is
     signal cmp : integer := 0;
-    signal cnt : integer := 0; 
+    signal cnt : integer := 0;
 begin
 
-process (clk, resetn, cmp_val, cnt) begin
+process (cmp_val_clk, resetn, cmp_val) begin
+    if rising_edge(cmp_val_clk) then
+       if resetn='0' then
+        cmp <= 0;
+       else 
+        cmp <= to_integer(unsigned(cmp_val));
+       end if;
+    end if;
+end process;
+
+process (clk, resetn, cmp, cnt) begin
     if rising_edge(clk) then
         if resetn='0' then
-            cmp <= 0;
             cnt <= 0;
         else
             cnt <= cnt + 1;
-            cmp <= to_integer(unsigned(cmp_val));
             if cnt >= cmp then
                 thresh <= '1';
                 cnt <= 0;
