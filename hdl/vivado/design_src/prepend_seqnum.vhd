@@ -47,7 +47,7 @@ entity prepend_seqnum is
            );
 end prepend_seqnum;
 
-architecture Behavioral of prepend_seqnum is
+    architecture Behavioral of prepend_seqnum is
 -- natural has size of 31 bits unsigned
     signal seqnum : natural := 0;
     type State_t is (PREPEND, FORWARD);
